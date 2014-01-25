@@ -33,5 +33,5 @@ int main()
         app.display();
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
