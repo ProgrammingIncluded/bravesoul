@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 
+
 int main()
 {
     // Create the main window
@@ -11,7 +12,7 @@ int main()
         return EXIT_FAILURE;
     sf::Sprite sprite(texture);
 
-	// Start the game loop
+    // Start the game loop
     while (app.isOpen())
     {
         // Process events
