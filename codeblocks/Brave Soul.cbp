@@ -41,7 +41,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="cb.bmp" />
 		<Unit filename="include/RenderHandler.h" />
 		<Unit filename="include/gameObject.h" />
 		<Unit filename="main.cpp" />

@@ -9,7 +9,7 @@ int main()
     // Load a sprite to display
     sf::Texture texture;
     if (!texture.loadFromFile("assets/general/logo.png"))
-        return EXIT_FAILURE;
+        return 1;
     sf::Sprite sprite(texture);
 
     // Start the game loop
@@ -21,7 +21,15 @@ int main()
         {
             // Close window : exit
             if (event.type == sf::Event::Closed)
+            {
                 app.close();
+            }
+
+            if(event.type == sf::Event::Resized)
+            {
+                app.setView(sf::View(sf::FloatRect(0.f, 0.f, event.size.width, event.size.height)));
+            }
+
         }
 
         // Clear screen

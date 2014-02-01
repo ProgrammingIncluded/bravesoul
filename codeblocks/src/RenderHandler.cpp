@@ -16,6 +16,8 @@ void RenderHandler::update()
     {
         render->draw(spriteQueue[i]);
     }
+
+    spriteQueue.clear();
 }
 
 void RenderHandler::addRender(sf::Sprite spr)

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1390616697 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
+1390674634 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
 	<SFML/Graphics.hpp>
 
 1390611944 ML/Graphics.hpp>
@@ -278,4 +278,10 @@
 	"gameObject.h"
 
 1390617815 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/gameObject.h
+
+1390674765 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/RenderHandler.cpp
+	"RenderHandler.h"
+
+1390636286 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/RenderHandler.h
+	<SFML/Graphics.hpp>
 
