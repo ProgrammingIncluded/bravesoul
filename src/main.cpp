@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 
-
 int main()
 {
     // Create the main window
@@ -8,11 +7,11 @@ int main()
 
     // Load a sprite to display
     sf::Texture texture;
-    if (!texture.loadFromFile("assets/general/logo.png"))
-        return 1;
+    if (!texture.loadFromFile("cb.bmp"))
+        return EXIT_FAILURE;
     sf::Sprite sprite(texture);
 
-    // Start the game loop
+	// Start the game loop
     while (app.isOpen())
     {
         // Process events
@@ -21,15 +20,7 @@ int main()
         {
             // Close window : exit
             if (event.type == sf::Event::Closed)
-            {
                 app.close();
-            }
-
-            if(event.type == sf::Event::Resized)
-            {
-                app.setView(sf::View(sf::FloatRect(0.f, 0.f, event.size.width, event.size.height)));
-            }
-
         }
 
         // Clear screen
@@ -42,5 +33,5 @@ int main()
         app.display();
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

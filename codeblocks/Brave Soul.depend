@@ -1,8 +1,6 @@
 # depslib dependency file v1.0
-1391454482 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
+1390674634 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
 	<SFML/Graphics.hpp>
-	"AnimatedSprite.h"
-	<iostream>
 
 1390611944 ML/Graphics.hpp>
 
@@ -276,13 +274,10 @@
 
 1367997280 c:\sfml-2.1\include\sfml\graphics\text.hpp
 
-1391477266 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/gameObject.cpp
+1390616874 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/gameObject.cpp
 	"gameObject.h"
 
-1391477282 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/gameObject.h
-	<vector>
-	"AnimatedSprite.h"
-	"Attack.h"
+1390617815 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/gameObject.h
 
 1390674765 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/RenderHandler.cpp
 	"RenderHandler.h"
@@ -290,6 +285,7 @@
 1390636286 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/RenderHandler.h
 	<SFML/Graphics.hpp>
 
+<<<<<<< HEAD
 1391454446 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AnimatedSprite.h
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/System/Time.hpp>
@@ -347,3 +343,5 @@
 	"AnimatedSprite.h"
 	"Attack.h"
 
+=======
+>>>>>>> parent of e6eb7aa... Added game logic framework.
