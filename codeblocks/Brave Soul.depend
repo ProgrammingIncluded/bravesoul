@@ -343,5 +343,8 @@
 	"AnimatedSprite.h"
 	"Attack.h"
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of e6eb7aa... Added game logic framework.
+=======
+>>>>>>> 2431c7b... Updated GameObject template.
