@@ -41,9 +41,23 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/AnimatedSprite.h" />
+		<Unit filename="include/Animation.h" />
+		<Unit filename="include/Attack.h" />
+		<Unit filename="include/Character.h" />
+		<Unit filename="include/Damage.h" />
+		<Unit filename="include/Effect.h" />
+		<Unit filename="include/Frozen.h" />
 		<Unit filename="include/RenderHandler.h" />
 		<Unit filename="include/gameObject.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AnimatedSprite.cpp" />
+		<Unit filename="src/Animation.cpp" />
+		<Unit filename="src/Attack.cpp" />
+		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Damage.cpp" />
+		<Unit filename="src/Effect.cpp" />
+		<Unit filename="src/Frozen.cpp" />
 		<Unit filename="src/RenderHandler.cpp" />
 		<Unit filename="src/gameObject.cpp" />
 		<Extensions>

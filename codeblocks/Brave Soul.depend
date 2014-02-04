@@ -309,18 +309,18 @@
 1391454434 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Animation.cpp
 	"Animation.h"
 
-1391477289 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Attack.cpp
+1391546383 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Attack.cpp
 	"Attack.h"
 	"Frozen.h"
 
-1391477539 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Attack.h
-	"Effect.h"
+1391552824 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Attack.h
 	<map>
+	"Effect.h"
 	"Damage.h"
-	"gameObject.h"
+	"GameObject.h"
 
-1391477101 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Effect.h
-	"gameObject.h"
+1391552824 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Effect.h
+	"GameObject.h"
 
 1391476173 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Damage.h
 
@@ -330,8 +330,8 @@
 1391476488 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Character.cpp
 	"Character.h"
 
-1391476449 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Character.h
-	"gameObject.h"
+1391552824 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Character.h
+	"GameObject.h"
 
 1391477001 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Damage.cpp
 	"Damage.h"
@@ -341,4 +341,9 @@
 
 1391473060 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Frozen.cpp
 	"Frozen.h"
+
+1391552791 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/GameObject.h
+	<vector>
+	"AnimatedSprite.h"
+	"Attack.h"
 

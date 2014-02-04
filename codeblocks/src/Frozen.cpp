@@ -10,6 +10,6 @@ Frozen::~Frozen()
     //dtor
 }
 
-void Frozen::affect(gameObject* ob, int str){
+void Frozen::affect(GameObject* ob, int str){
     //Put stuff here
 }

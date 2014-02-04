@@ -5,17 +5,18 @@
 #include "AnimatedSprite.h"
 #include "Attack.h"
 
-class gameObject{
+class GameObject{
 
 public:
-    gameObject();
-    ~gameObject();
+    GameObject();
+    ~GameObject();
 
     AnimatedSprite* getSprite();
 
     void setSprite(AnimatedSprite* s);
 
 private:
+
     AnimatedSprite* spr;
     std::vector<enum_effect>effects;
 

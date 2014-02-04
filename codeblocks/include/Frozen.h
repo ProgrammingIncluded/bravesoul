@@ -9,7 +9,7 @@ class Frozen : public Effect
         Frozen();
         ~Frozen();
 
-        void affect(gameObject* ob, int str);
+        void affect(GameObject* ob, int str);
 };
 
 #endif // FROZEN_H

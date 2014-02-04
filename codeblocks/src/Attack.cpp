@@ -6,7 +6,7 @@ Attack::Attack()
     //ctor
 }
 
-void Attack::apply(){
+void Attack::apply(GameObject *go){
     //tes
 }
 

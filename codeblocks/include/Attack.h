@@ -1,13 +1,6 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-/**
-* Attack class used to calculate effects and damage.
-* gameObject use this class to send attack packets.
-*
-*/
-
-
 enum enum_effect{
     frozen,
     heat,
@@ -16,12 +9,20 @@ enum enum_effect{
     confused
 };
 
-#include "Effect.h"
 #include <map>
+#include "Effect.h"
 #include "Damage.h"
-#include "gameObject.h"
+#include "GameObject.h"
 
-class Effect; //Used since effect, attack, and gameObject have a loop include. Give errors... Codeblocks...
+class Effect; //Used since effect, attack, and GameObject have a loop include. Give errors... Codeblocks...
+class GameObject;
+
+
+/**
+* Attack class used to calculate effects and damage.
+* GameObject use this class to send attack packets.
+*
+*/
 
 class Attack
 {
@@ -29,7 +30,7 @@ class Attack
 
         Attack();
 
-        void apply();
+        void apply(GameObject* go);
 
         void addDamage(Damage d);
         void subtrDamage(Damage d);
