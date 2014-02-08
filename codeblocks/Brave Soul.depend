@@ -6,7 +6,10 @@
 
 1390611944 ML/Graphics.hpp>
 
-1390611944 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\main.cpp
+1391819768 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\main.cpp
+	<SFML/Graphics.hpp>
+	"AnimatedSprite.h"
+	<iostream>
 
 1367997278 c:\sfml-2.1\include\sfml\graphics.hpp
 
@@ -346,4 +349,70 @@
 	<vector>
 	"AnimatedSprite.h"
 	"Attack.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\animatedsprite.h
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/System/Vector2.hpp>
+	"Animation.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\animation.h
+	<vector>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Texture.hpp>
+
+1391819768 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\animatedsprite.cpp
+	"AnimatedSprite.h"
+
+1391819768 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\animation.cpp
+	"Animation.h"
+
+1391819768 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\attack.cpp
+	"Attack.h"
+	"Frozen.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\attack.h
+	<map>
+	"Effect.h"
+	"Damage.h"
+	"GameObject.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\effect.h
+	"GameObject.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\gameobject.h
+	<vector>
+	"AnimatedSprite.h"
+	"Attack.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\damage.h
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\frozen.h
+	"Effect.h"
+
+1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\character.cpp
+	"Character.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\character.h
+	"GameObject.h"
+
+1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\damage.cpp
+	"Damage.h"
+
+1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\effect.cpp
+	"Effect.h"
+
+1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\frozen.cpp
+	"Frozen.h"
+
+1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\gameobject.cpp
+	"GameObject.h"
+
+1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\renderhandler.cpp
+	"RenderHandler.h"
+
+1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\renderhandler.h
+	<SFML/Graphics.hpp>
 
