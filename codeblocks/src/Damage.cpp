@@ -7,6 +7,7 @@ Damage::Damage()
     stm = 0;
 }
 
+
 Damage operator+(const Damage & a, const Damage & b){
     Damage r;
 

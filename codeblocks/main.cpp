@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
-#include "AnimatedSprite.h"
+#include <SFML/Audio.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 #include <iostream>
+#include "AnimatedSprite.h"
 
 int main()
 {
@@ -56,6 +58,15 @@ int main()
 
     float speed = 80.f;
     bool noKeyWasPressed = true;
+
+    sf::SoundBuffer buffer;
+    if(!buffer.loadFromFile("assets/audio/Innoncence Charles Cover.wav")){
+        return -1;
+    }
+
+    sf::Sound sound;
+    sound.setBuffer(buffer);
+    sound.play();
 
     while (window.isOpen())
     {
@@ -114,6 +125,8 @@ int main()
         window.draw(animatedSprite);
         window.display();
     }
+
+    sound.stop();
 
     return 0;
 }

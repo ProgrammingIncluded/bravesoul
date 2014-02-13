@@ -9,6 +9,7 @@ class Effect{
     public:
         //! Abstract Functions
         /*! Function called when effect wants to be applied. */
+
         virtual void affect(GameObject* go, int str) = 0; //Might change to overloading for character and weapon.
 
         //! Getters
