@@ -59,6 +59,9 @@
 		<Unit filename="include/AnimatedSprite.h" />
 		<Unit filename="include/Animation.h" />
 		<Unit filename="include/Attack.h" />
+		<Unit filename="include/AudioHandler.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/Damage.h" />
 		<Unit filename="include/Effect.h" />
@@ -69,6 +72,9 @@
 		<Unit filename="src/AnimatedSprite.cpp" />
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/Attack.cpp" />
+		<Unit filename="src/AudioHandler.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Damage.cpp" />
 		<Unit filename="src/Effect.cpp" />
