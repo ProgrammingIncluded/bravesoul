@@ -1,9 +1,1 @@
-When playing a music:
-- load
-- choose to loop indefinitately 
-- (choose to loop via counter)
-- pause // hold to play other music?
-
-- Want to be able to load multiple music buffers?
-	-> no, have them replaced every time new music is requested
-
+Changes in codeblocks/src
