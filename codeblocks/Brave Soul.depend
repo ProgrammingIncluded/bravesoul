@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1392326181 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
+1392797950 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
 	<SFML/Graphics.hpp>
-	<SFML/Audio.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 	<iostream>
+	"AudioHandler.h"
 	"AnimatedSprite.h"
 
 1390611944 ML/Graphics.hpp>
@@ -438,4 +438,14 @@
 
 1392332686 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Weapon.h
 	"Offense.h"
+
+1392797283 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AudioHandler.h
+	<SFML/Audio.hpp>
+	<unordered_map>
+	<stdio.h>
+	<vector>
+	<memory>
+
+1392797268 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioHandler.cpp
+	"AudioHandler.h"
 

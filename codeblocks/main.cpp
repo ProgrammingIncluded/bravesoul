@@ -1,8 +1,9 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
 #include <SFML/Audio/SoundBuffer.hpp>
 #include <iostream>
+#include "AudioHandler.h"
 #include "AnimatedSprite.h"
+
 
 int main()
 {
@@ -59,14 +60,15 @@ int main()
     float speed = 80.f;
     bool noKeyWasPressed = true;
 
-    sf::SoundBuffer buffer;
-    if(!buffer.loadFromFile("assets/audio/Innoncence Charles Cover.wav")){
-        return -1;
-    }
-
-    sf::Sound sound;
-    sound.setBuffer(buffer);
-    sound.play();
+    // Test AudioHandler
+    AudioHandler* auh = new AudioHandler();
+    int sound = auh->loadSound("assets/audio/Innoncence Charles Cover.wav");
+    int sound2 = auh->loadSound("assets/audio/Innoncence Charles Cover.wav");
+    std::cout << "Currently, sound1 (playing) and sound2 (not playing) (sharing same buffer), index in AudioHandler: " << sound << " AND " << sound2 << std::endl;
+    std::cout << "Press q to play sound2." << std::endl;
+    std::cout << "Press e to stop sound2." << std::endl;
+    auh->playSound(sound);
+    auh->loopSound(sound,true);
 
     while (window.isOpen())
     {
@@ -95,6 +97,15 @@ int main()
             movement.y += speed;
             noKeyWasPressed = false;
         }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
+            auh->playSound(sound2);
+        }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
+            auh->stopSound(sound2);
+        }
+
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
             currentAnimation = &walkingAnimationLeft;
@@ -125,8 +136,8 @@ int main()
         window.draw(animatedSprite);
         window.display();
     }
-
-    sound.stop();
-
+    auh->stopSound(sound);
+    delete auh;
+    auh = nullptr;
     return 0;
 }
