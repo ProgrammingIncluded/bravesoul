@@ -8,10 +8,12 @@
 
 1390611944 ML/Graphics.hpp>
 
-1391819768 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\main.cpp
+1393312770 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\main.cpp
 	<SFML/Graphics.hpp>
-	"AnimatedSprite.h"
+	<SFML/Audio/SoundBuffer.hpp>
 	<iostream>
+	"AudioHandler.h"
+	"AnimatedSprite.h"
 
 1367997278 c:\sfml-2.1\include\sfml\graphics.hpp
 
@@ -381,7 +383,7 @@
 	"Damage.h"
 	"GameObject.h"
 
-1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\effect.h
+1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\effect.h
 	"GameObject.h"
 
 1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\gameobject.h
@@ -400,7 +402,7 @@
 1391819768 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\character.h
 	"GameObject.h"
 
-1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\damage.cpp
+1393024760 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\damage.cpp
 	"Damage.h"
 
 1391819769 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\effect.cpp
@@ -448,4 +450,92 @@
 
 1392797268 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioHandler.cpp
 	"AudioHandler.h"
+
+1367997278 c:\sfml-2.1\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1393314347 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\audiohandler.h
+	<SFML/Audio.hpp>
+	<unordered_map>
+	<stdio.h>
+	<vector>
+	<memory>
+
+1367997278 c:\sfml-2.1\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1367997278 c:\sfml-2.1\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Thread.hpp>
+	<vector>
+
+1393024760 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\abilities.cpp
+	"Abilities.h"
+
+1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\abilities.h
+	"Offense.h"
+
+1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\offense.h
+	"GameObject.h"
+
+1393314530 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\audiohandler.cpp
+	"AudioHandler.h"
+
+1393024760 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\offense.cpp
+	"Offense.h"
+
+1393024760 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\weapon.cpp
+	"Weapon.h"
+
+1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\weapon.h
+	"Offense.h"
 

@@ -56,32 +56,54 @@ int main()
     animatedSprite.setPosition(sf::Vector2f(screenDimensions / 2));
 
     sf::Clock frameClock;
+    sf::Event *event;
 
     float speed = 80.f;
     bool noKeyWasPressed = true;
 
     // Test AudioHandler
     AudioHandler* auh = new AudioHandler();
-    int sound = auh->loadSound("assets/audio/Innoncence Charles Cover.wav");
-    int sound2 = auh->loadSound("assets/audio/Innoncence Charles Cover.wav");
-    std::cout << "Currently, sound1 (playing) and sound2 (not playing) (sharing same buffer), index in AudioHandler: " << sound << " AND " << sound2 << std::endl;
-    std::cout << "Press q to play sound2." << std::endl;
-    std::cout << "Press e to stop sound2." << std::endl;
-    auh->playSound(sound);
-    auh->loopSound(sound,true);
+    int s1 = auh->loadSound("assets/audio/Page Turn.wav");
+    auh->playMusic("assets/audio/Yosuga No Sora OST 1.wav");
+    std::cout << "AudioHandler index used: " << s1 << std::endl;
+    std::cout << "Press q to turn a page." << std::endl;
+    std::cout << "Press e to play music." << std::endl;
+    std::cout << "Press r to pause music." << std::endl;
+    std::cout << "Press a to increase volume." << std::endl;
+    std::cout << "Press z to decrease volume." << std::endl;
 
     while (window.isOpen())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
+        event = new sf::Event();
+        while (window.pollEvent(*event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event->type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+            if (event->type == sf::Event::KeyPressed && event->key.code == sf::Keyboard::Escape)
                 window.close();
         }
 
         sf::Time frameTime = frameClock.restart();
+
+        if(event->type == sf::Event::KeyReleased) {
+            if(event->key.code == sf::Keyboard::Q) {
+                auh->playSound(s1);
+            }
+            if(event->key.code == sf::Keyboard::E) {
+                auh->playMusic();
+            }
+            if(event->key.code == sf::Keyboard::R) {
+                auh->pauseMusic();
+            }
+            if(event->key.code == sf::Keyboard::A) {
+                auh->setVolume(auh->getVolume() + 5);
+                std::cout << "\tVolume is " << auh->getVolume() << "\n";
+            }
+            if(event->key.code == sf::Keyboard::Z) {
+                auh->setVolume(auh->getVolume() - 5);
+                std::cout << "\tVolume is " << auh->getVolume() << "\n";
+            }
+        }
 
         // if a key was pressed set the correct animation and move correctly
         sf::Vector2f movement(0.f, 0.f);
@@ -96,14 +118,6 @@ int main()
             currentAnimation = &walkingAnimationDown;
             movement.y += speed;
             noKeyWasPressed = false;
-        }
-
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
-            auh->playSound(sound2);
-        }
-
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
-            auh->stopSound(sound2);
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -135,9 +149,11 @@ int main()
         window.clear();
         window.draw(animatedSprite);
         window.display();
+
+        delete event;
     }
-    auh->stopSound(sound);
     delete auh;
     auh = nullptr;
+
     return 0;
 }

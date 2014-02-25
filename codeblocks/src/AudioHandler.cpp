@@ -5,16 +5,25 @@ typedef std::shared_ptr<sf::SoundBuffer> sbPtr;
 typedef std::shared_ptr<sf::Sound> sdPtr;
 
 AudioHandler::AudioHandler() {
-    v = 50;
-    m.reserve(100); // initial set
+    v = 30;
+    vInc = 5;
+    b.reserve(100); // initial set
 }
 
 AudioHandler::~AudioHandler() {
-    // missing destructors, will add
+    s.clear();
+    b.clear();
 }
 
 AudioHandler* AudioHandler::setVolume(float v) {
+    if(v < 0)
+        v = 0;
+    else if(v > 100)
+        v = 100;
+
     this->v = v;
+    m.setVolume(this->v);
+
     return this;
 }
 
@@ -22,25 +31,64 @@ float AudioHandler::getVolume() {
     return this->v;
 }
 
-int AudioHandler::loadSound(string file) {
-    unordered_map<string, shared_ptr<sf::SoundBuffer>>::iterator it = m.find(file);
+float AudioHandler::incVolume() {
+    v += vInc;
+    if(v > 100)
+        v = 100;
 
-    if (it != m.end()) {
+    return this->v;
+}
+
+float AudioHandler::incVolume(float newInc) {
+    vInc = newInc;
+    incVolume();
+
+    return this->v;
+}
+
+float AudioHandler::decVolume() {
+    v -= vInc;
+    if(v < 0)
+        v = 0;
+
+    return this->v;
+}
+
+float AudioHandler::decVolume(float newInc) {
+    vInc = newInc;
+    decVolume()
+
+    return this->v;
+}
+
+AudioHandler* AudioHandler::setVolIncrements(float newInc) {
+    vInc = newInc;
+
+    return this;
+}
+
+float AudioHandler::getVolIncrements() {
+    return this->vInc;
+}
+
+int AudioHandler::loadSound(string file) {
+    unordered_map<string, shared_ptr<sf::SoundBuffer>>::iterator it = b.find(file);
+
+    if (it != b.end()) {
         sdPtr newSnd(new sf::Sound(*it->second));
         s.push_back(newSnd);
-    }
-    else {
+    } else {
         sbPtr sb(new sf::SoundBuffer());
 
         if(!sb->loadFromFile(file)) {
             return -1;
         }
 
-        if(!(m[file] = sb)) { /// check to rehash
+        if(!(b[file] = sb)) { /// check to rehash
             return -1; /// placeholder for file exception
         }
 
-        sdPtr snd(new sf::Sound(*m[file]));
+        sdPtr snd(new sf::Sound(*b[file]));
         s.push_back(snd);
     }
 
@@ -78,31 +126,41 @@ void AudioHandler::stopSound(int i) {
 }
 
 void AudioHandler::playMusic(string file) {
-    if (!a.openFromFile(file)) {
-        return; /// placeholder for file exception
+    if(m.getStatus() == sf::SoundSource::Playing) {
+        m.pause();
     }
+    loadMusic(file);
     playMusic();
 
     return;
 }
 
 void AudioHandler::playMusic() {
-    a.setVolume(this->v);
-    a.setLoop(true);
-    a.play();
+    if(m.getStatus() == sf::SoundSource::Playing) {
+        return; // dont run another play() while playing
+    }
+    m.setVolume(this->v);
+    m.setLoop(true);
+    m.play();
+
+    return;
+}
+
+void AudioHandler::pauseMusic() {
+    m.pause();
+
+    return;
+}
+
+void AudioHandler::loadMusic(string file) {
+    if (!m.openFromFile(file)) {
+        return; /// placeholder for file exception
+    }
 
     return;
 }
 
 void AudioHandler::clearBuffer() {
-    /*for (sf::Sound& si : s) { // dont know if i need this
-        delete si;
-    }
-    for (pair<string, sf::SoundBuffer>& mi : m) {
-        delete mi.second;
-        // shouldnt have to create new strings for the hash, 90% sure
-    }*/
     s.clear();
-    m.clear();
-
+    b.clear();
 }

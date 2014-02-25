@@ -27,16 +27,23 @@ class AudioHandler {
         void playMusic(std::string file); // music loops by default
         void playMusic();
         void pauseMusic();
+        void loadMusic(std::string file);
         ///
         AudioHandler* setVolume(float volume);
         float getVolume();
+        AudioHandler* setVolIncrements(float newInc);
+        float getVolIncrements();
+        float incVolume();
+        float incVolume(float newInc);
+        float decVolume();
+        float decVolume(float decInc);
         void clearBuffer();
     protected:
-        //vector<SoundBuffer> b;
-        std::vector<std::shared_ptr<sf::Sound>> s; // s for sound
-        float v;// default 50, v for volume
-        std::unordered_map<std::string, std::shared_ptr<sf::SoundBuffer>> m; // m for map, no f
-        sf::Music a; // a for audio
+        std::vector<std::shared_ptr<sf::Sound>> s;
+        std::unordered_map<std::string, std::shared_ptr<sf::SoundBuffer>> b;
+        float v;
+        float vInc;
+        sf::Music m;
 };
 
 #endif // AUDIOHANDLER_H_INCLUDED
