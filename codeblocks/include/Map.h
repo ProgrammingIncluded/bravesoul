@@ -12,11 +12,11 @@
 class Map
 {
     public:
-        Map();
+        Map(sf::Vector3i mSize);
         virtual ~Map();
 
-        bool addGO(GameObject* go, sf::Vector3f vect);
-        bool addGO(GameObject* go, sf::Vector2f vect); // For convenience...
+        bool addGO(GameObject* go, sf::Vector3i vect);
+        bool addGO(GameObject* go, sf::Vector2i vect); // For convenience...
         bool removeGO(GameObject& go);
 
         bool setScene(std::string fileLoc);
@@ -38,7 +38,7 @@ class Map
         sf::Vector3f startCorner; //Relative to scene. Scene renders at 0,0,0
         sf::Vector3f endCorner;
         sf::Vector3f mapPos;
-
+        sf::Vector3i mSize;
 };
 
 #endif // MAP_H

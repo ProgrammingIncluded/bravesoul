@@ -18,9 +18,6 @@ public:
 
     AnimatedSprite* getAnimatedSprite();
 
-    sf::Vector3f getPosition();
-    void setPosition(sf::Vector3f vect);
-    void setPosition(sf::Vector2f vect);
 
 private:
     // Should position be stored in GO as well?

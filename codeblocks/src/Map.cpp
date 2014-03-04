@@ -1,18 +1,20 @@
 #include "Map.h"
-#include <memory>
+#include <iostream>
 
-Map::Map()
+
+Map::Map(sf::Vector3i mSize)
 {
     startCorner = sf::Vector3f(0,0,0);
     mapPos = startCorner;
     endCorner = sf::Vector3f(1,1,0);
-    int n = 10; // Note: n^3 Please be mindful... Might switch to array?
-    mapList.resize(n);
-    for(int i = 0; i < n; i++){
-        mapList[i].resize(n);
 
-        for(int x=0; x < n; x++ ){
-            mapList[i][x].resize(n);
+    this->mSize = mSize;
+    mapList.resize(mSize.x);
+    for(int i = 0; i < mSize.x; i++){
+        mapList[i].resize(mSize.y);
+
+        for(int x=0; x < mSize.y; x++ ){
+            mapList[i][x].resize(mSize.z);
         }
     }
 }
@@ -25,17 +27,17 @@ Map::~Map()
     sceneData = nullptr;
 }
 
-bool Map::addGO(GameObject* go, sf::Vector3f vect){
+bool Map::addGO(GameObject* go, sf::Vector3i vect){
     mapList[vect.x][vect.y][vect.z] = go;
-    go->setPosition(vect);
+    //go->setPosition(vect);
     go->getAnimatedSprite()->setPosition(sf::Vector2f(startCorner.x+vect.x,startCorner.y+vect.y)); // Will need to add z buffer to sprite
     spriteList.push_back(go->getAnimatedSprite());
     return true;
 }
 
-bool Map::addGO(GameObject* go, sf::Vector2f vect){
-    mapList[0][0][0] = go; // Will need to fix for later
-    go->setPosition(vect);
+bool Map::addGO(GameObject* go, sf::Vector2i vect){
+    mapList[vect.x][vect.y][0] = go; // Will need to fix for later. What happens if object is there. Need to do that.
+    //go->setPosition(vect);
     go->getAnimatedSprite()->setPosition(sf::Vector2f(startCorner.x+vect.x,startCorner.y+vect.y)); // Change source to accept vector2f
     spriteList.push_back(go->getAnimatedSprite());
     return true;
@@ -52,14 +54,16 @@ void Map::setMapPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
 }
 
 void Map::setPlayPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
-    this->startCorner = startCorner;
-    this->endCorner = endCorner;
-
     // Notice how the more GO, the longer it takes. Try not to move board position dynamically. Use in-game effects for effects.
     for(int x=0; x < spriteList.size(); x++){
-        sf::Vector3f vect = mapList[0][0][0]->getPosition();
-        spriteList[x]->setPosition(sf::Vector2f(startCorner.x+vect.x, startCorner.y+vect.y));
+        sf::Vector2f pos = spriteList[x]->getPosition();
+        float locx = pos.x - this->startCorner.x;
+        float locy = pos.y - this->startCorner.y;
+        spriteList[x]->setPosition(sf::Vector2f(locx + startCorner.x, locy + startCorner.y));
     }
+
+    this->startCorner = startCorner;
+    this->endCorner = endCorner;
 }
 
 void Map::setRenderPosition(sf::Vector3f pos){

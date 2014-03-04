@@ -58,14 +58,17 @@ int main()
     Character* mainCharacter = new Character();
     mainCharacter->setAnimation(walkingAnimationDown);
 
-    Map* level = new Map();
+    Character* mainCharacter2 = new Character();
+    mainCharacter2->setAnimation(walkingAnimationRight);
+
+    Map* level = new Map(sf::Vector3i(30,30,2));
     if(!level->setScene("Has temporary been disabled for parameter"))
     {
         return 1;
     }
     level->setMapPosition(sf::Vector3f(100,100,0),sf::Vector3f(0,0,0));
-    level->addGO(mainCharacter, sf::Vector2f(50,50));
-
+    level->addGO(mainCharacter, sf::Vector2i(0,0));
+    level->addGO(mainCharacter2, sf::Vector2i(26,29));
 
     sf::Clock frameClock;
     sf::Event *event;
@@ -121,19 +124,20 @@ int main()
 
         sf::Vector3f pos = level->getMapPos();
 
-
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            level->setMapPosition(sf::Vector3f(pos.x+1,pos.y,pos.z), sf::Vector3f(0,0,0));
+            pos.x+=1;
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            level->setMapPosition(sf::Vector3f(pos.x-1,pos.y,pos.z),sf::Vector3f(0,0,0));
+            pos.x-=1;
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-            level->setMapPosition(sf::Vector3f(pos.x,pos.y-1,pos.z),sf::Vector3f(0,0,0));
+            pos.y-=1;
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            level->setMapPosition(sf::Vector3f(pos.x,pos.y+1,pos.z),sf::Vector3f(0,0,0));
+            pos.y+=1;
         }
+
+        level->setMapPosition(pos, sf::Vector3f(0,0,0));
 
         renderHandler->addRender(level);
         renderHandler->update(frameTime);

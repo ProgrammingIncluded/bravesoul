@@ -26,7 +26,7 @@ void GameObject::setAnimation(Animation s){
 AnimatedSprite* GameObject::getAnimatedSprite(){
     return spr;
 }
-
+/*
 sf::Vector3f GameObject::getPosition(){
     return position;
 }
@@ -38,3 +38,4 @@ void GameObject::setPosition(sf::Vector3f vect){
 void GameObject::setPosition(sf::Vector2f vect){
     position = sf::Vector3f(vect.x,vect.y,position.z);
 }
+*/
