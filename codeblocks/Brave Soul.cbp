@@ -14,6 +14,7 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-std=c++11" />
+					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-std=gnu++11" />
 					<Add directory="include" />
@@ -68,8 +69,11 @@
 		<Unit filename="include/Effect.h" />
 		<Unit filename="include/Frozen.h" />
 		<Unit filename="include/GameObject.h" />
+		<Unit filename="include/Map.h" />
 		<Unit filename="include/Offense.h" />
 		<Unit filename="include/RenderHandler.h" />
+		<Unit filename="include/Scene.h" />
+		<Unit filename="include/TDScene.h" />
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Abilities.cpp" />
@@ -82,8 +86,11 @@
 		<Unit filename="src/Effect.cpp" />
 		<Unit filename="src/Frozen.cpp" />
 		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Offense.cpp" />
 		<Unit filename="src/RenderHandler.cpp" />
+		<Unit filename="src/Scene.cpp" />
+		<Unit filename="src/TDScene.cpp" />
 		<Unit filename="src/Weapon.cpp" />
 		<Extensions>
 			<code_completion />

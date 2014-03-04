@@ -56,7 +56,7 @@ float AudioHandler::decVolume() {
 
 float AudioHandler::decVolume(float newInc) {
     vInc = newInc;
-    decVolume()
+    decVolume();
 
     return this->v;
 }

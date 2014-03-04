@@ -1,16 +1,19 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio/SoundBuffer.hpp>
 #include <iostream>
+#include "Character.h"
+#include "RenderHandler.h"
 #include "AudioHandler.h"
-#include "AnimatedSprite.h"
+#include "Map.h"
+
 
 
 int main()
 {
     // setup window
     sf::Vector2i screenDimensions(800,600);
-    sf::RenderWindow window(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
-    window.setFramerateLimit(60);
+    sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
+    window->setFramerateLimit(60);
 
     // load texture (spritesheet)
     sf::Texture texture;
@@ -49,11 +52,20 @@ int main()
     walkingAnimationUp.addFrame(sf::IntRect(32, 96, 32, 32));
     walkingAnimationUp.addFrame(sf::IntRect( 0, 96, 32, 32));
 
-    Animation* currentAnimation = &walkingAnimationDown;
+    RenderHandler* renderHandler = new RenderHandler(window);
 
-    // set up AnimatedSprite
-    AnimatedSprite animatedSprite(sf::seconds(0.2), true, false);
-    animatedSprite.setPosition(sf::Vector2f(screenDimensions / 2));
+    //Try Gameobject class
+    Character* mainCharacter = new Character();
+    mainCharacter->setAnimation(walkingAnimationDown);
+
+    Map* level = new Map();
+    if(!level->setScene("Has temporary been disabled for parameter"))
+    {
+        return 1;
+    }
+    level->setMapPosition(sf::Vector3f(100,100,0),sf::Vector3f(0,0,0));
+    level->addGO(mainCharacter, sf::Vector2f(50,50));
+
 
     sf::Clock frameClock;
     sf::Event *event;
@@ -72,15 +84,17 @@ int main()
     std::cout << "Press a to increase volume." << std::endl;
     std::cout << "Press z to decrease volume." << std::endl;
 
-    while (window.isOpen())
+
+
+    while (window->isOpen())
     {
         event = new sf::Event();
-        while (window.pollEvent(*event))
+        while (window->pollEvent(*event))
         {
             if (event->type == sf::Event::Closed)
-                window.close();
+                window->close();
             if (event->type == sf::Event::KeyPressed && event->key.code == sf::Keyboard::Escape)
-                window.close();
+                window->close();
         }
 
         sf::Time frameTime = frameClock.restart();
@@ -105,55 +119,42 @@ int main()
             }
         }
 
-        // if a key was pressed set the correct animation and move correctly
-        sf::Vector2f movement(0.f, 0.f);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            currentAnimation = &walkingAnimationUp;
-            movement.y -= speed;
-            noKeyWasPressed = false;
+        sf::Vector3f pos = level->getMapPos();
+
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            level->setMapPosition(sf::Vector3f(pos.x+1,pos.y,pos.z), sf::Vector3f(0,0,0));
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            currentAnimation = &walkingAnimationDown;
-            movement.y += speed;
-            noKeyWasPressed = false;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            level->setMapPosition(sf::Vector3f(pos.x-1,pos.y,pos.z),sf::Vector3f(0,0,0));
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+            level->setMapPosition(sf::Vector3f(pos.x,pos.y-1,pos.z),sf::Vector3f(0,0,0));
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            level->setMapPosition(sf::Vector3f(pos.x,pos.y+1,pos.z),sf::Vector3f(0,0,0));
         }
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        {
-            currentAnimation = &walkingAnimationLeft;
-            movement.x -= speed;
-            noKeyWasPressed = false;
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        {
-            currentAnimation = &walkingAnimationRight;
-            movement.x += speed;
-            noKeyWasPressed = false;
-        }
-        animatedSprite.play(*currentAnimation);
-        animatedSprite.move(movement * frameTime.asSeconds());
-
-        // if no key was pressed stop the animation
-        if (noKeyWasPressed)
-        {
-            animatedSprite.stop();
-        }
-        noKeyWasPressed = true;
-
-        // update AnimatedSprite
-        animatedSprite.update(frameTime);
-
-        // draw
-        window.clear();
-        window.draw(animatedSprite);
-        window.display();
+        renderHandler->addRender(level);
+        renderHandler->update(frameTime);
 
         delete event;
     }
+
+    delete renderHandler;
+    renderHandler = nullptr;
+
     delete auh;
     auh = nullptr;
+
+    delete level;
+    level = nullptr;
+
+    delete mainCharacter;
+    mainCharacter = nullptr;
+
+    delete window;
+    window = nullptr;
 
     return 0;
 }

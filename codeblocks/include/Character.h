@@ -6,6 +6,7 @@
 class Character : public GameObject{
     public:
         Character(int mh = 100, int mm = 100, int ms = 100);
+
     private:
         int maxhp;
         int maxmp;
