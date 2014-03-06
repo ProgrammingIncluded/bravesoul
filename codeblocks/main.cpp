@@ -54,21 +54,23 @@ int main()
 
     RenderHandler* renderHandler = new RenderHandler(window);
 
-    //Try Gameobject class
-    Character* mainCharacter = new Character();
-    mainCharacter->setAnimation(walkingAnimationDown);
-
-    Character* mainCharacter2 = new Character();
-    mainCharacter2->setAnimation(walkingAnimationRight);
-
-    Map* level = new Map(sf::Vector3i(30,30,2));
+    Map* level = new Map(sf::Vector3i(500,500,2));
     if(!level->setScene("Has temporary been disabled for parameter"))
     {
         return 1;
     }
     level->setMapPosition(sf::Vector3f(100,100,0),sf::Vector3f(0,0,0));
-    level->addGO(mainCharacter, sf::Vector2i(0,0));
-    level->addGO(mainCharacter2, sf::Vector2i(26,29));
+
+    std::vector<Character*> arrayChar;
+    //Try Gameobject class
+    for(int i = 0; i <= 10; i++){
+        for(int x = 0; x <=10; x++){
+            Character* steve = new Character();
+            steve->setAnimation(walkingAnimationDown);
+            arrayChar.push_back(steve);
+            level->addGO(steve, sf::Vector2i(i,x));
+        }
+    }
 
     sf::Clock frameClock;
     sf::Event *event;
@@ -154,11 +156,12 @@ int main()
     delete level;
     level = nullptr;
 
-    delete mainCharacter;
-    mainCharacter = nullptr;
-
     delete window;
     window = nullptr;
+
+    for(int x =0; x< arrayChar.size(); x++){
+        delete arrayChar[x];
+    }
 
     return 0;
 }

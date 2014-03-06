@@ -4,10 +4,13 @@
 
 Map::Map(sf::Vector3i mSize)
 {
+    // Size allocation is based on dimensions.
     startCorner = sf::Vector3f(0,0,0);
     mapPos = startCorner;
     endCorner = sf::Vector3f(1,1,0);
-
+    mSize.x += 1;
+    mSize.y += 1;
+    mSize.z += 1;
     this->mSize = mSize;
     mapList.resize(mSize.x);
     for(int i = 0; i < mSize.x; i++){
