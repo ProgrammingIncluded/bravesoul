@@ -11,9 +11,10 @@
 int main()
 {
     // setup window
-    sf::Vector2i screenDimensions(800,600);
+    sf::Vector2i screenDimensions(800, 600);
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
-    window->setFramerateLimit(60);
+
+    window->setVerticalSyncEnabled(true);
 
     // load texture (spritesheet)
     sf::Texture texture;
@@ -63,8 +64,8 @@ int main()
 
     std::vector<Character*> arrayChar;
     //Try Gameobject class
-    for(int i = 0; i <= 10; i++){
-        for(int x = 0; x <=10; x++){
+    for(int i = 0; i <= 100; i++){
+        for(int x = 0; x <= 100; x++){
             Character* steve = new Character();
             steve->setAnimation(walkingAnimationDown);
             arrayChar.push_back(steve);
@@ -77,16 +78,18 @@ int main()
 
     float speed = 80.f;
     bool noKeyWasPressed = true;
+    bool isMapMov = false;
 
     // Test AudioHandler
     AudioHandler* auh = new AudioHandler();
     int s1 = auh->loadSound("assets/audio/Page Turn.wav");
     auh->playMusic("assets/audio/Yosuga No Sora OST 1.wav");
+    //auh->playMusic("assets/audio/conquest.wav");
     std::cout << "AudioHandler index used: " << s1 << std::endl;
     std::cout << "Press q to turn a page." << std::endl;
     std::cout << "Press e to play music." << std::endl;
     std::cout << "Press r to pause music." << std::endl;
-    std::cout << "Press a to increase volume." << std::endl;
+    std::cout << "Press x to increase volume." << std::endl;
     std::cout << "Press z to decrease volume." << std::endl;
 
 
@@ -114,7 +117,7 @@ int main()
             if(event->key.code == sf::Keyboard::R) {
                 auh->pauseMusic();
             }
-            if(event->key.code == sf::Keyboard::A) {
+            if(event->key.code == sf::Keyboard::X) {
                 auh->setVolume(auh->getVolume() + 5);
                 std::cout << "\tVolume is " << auh->getVolume() << "\n";
             }
@@ -122,24 +125,57 @@ int main()
                 auh->setVolume(auh->getVolume() - 5);
                 std::cout << "\tVolume is " << auh->getVolume() << "\n";
             }
+
+            if(event->key.code == sf::Keyboard::T){
+                if(isMapMov){
+                    isMapMov = false;
+                    std::cout << "Now using renderview movement." << std::endl;
+                }
+                else{
+                    isMapMov = true;
+                    std::cout << "Now using physical Map movement." << std::endl;
+                }
+            }
         }
 
-        sf::Vector3f pos = level->getMapPos();
+        int movSpd = 5;
+        if(isMapMov){
+             sf::Vector3f pos = level->getMapPos();
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            pos.x+=1;
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                pos.x-=movSpd;
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+                pos.x+=movSpd;
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+                pos.y+=movSpd;
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                pos.y-=movSpd;
+            }
+
+            level->setMapPosition(pos, sf::Vector3f(0,0,0));
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            pos.x-=1;
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-            pos.y-=1;
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            pos.y+=1;
+       else{
+            sf::View view = window->getView();
+
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                view.move(movSpd,0);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+                view.move(-movSpd,0);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+                view.move(0,-movSpd);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                view.move(0,movSpd);
+            }
+            window->setView(view);
         }
 
-        level->setMapPosition(pos, sf::Vector3f(0,0,0));
+
 
         renderHandler->addRender(level);
         renderHandler->update(frameTime);

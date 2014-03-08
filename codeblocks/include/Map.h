@@ -25,20 +25,22 @@ class Map
         void setPlayPosition(sf::Vector3f startCorner, sf::Vector3f endCorner); //Sets grid positions.
         void setRenderPosition(sf::Vector3f pos); //Note: only changes render area
         void setMapPosition(sf::Vector3f startCorner, sf::Vector3f endCorner);
+        void setSpacing(int spc);
 
-        std::vector<AnimatedSprite*> getSpriteRender(); // Temporary place holder, used for render handler
+        std::vector<AnimatedSprite*>* getSpriteRender(); // Temporary place holder, used for render handler
         Scene<AnimatedSprite*>* getBackground();
         sf::Vector3f getMapPos();
         //GLFloat get3DRender();
 
     private:
         std::vector<std::vector<std::vector<GameObject*>>> mapList;
-        std::vector<AnimatedSprite*> spriteList; // Used for organizing sprites
+        std::vector<AnimatedSprite*>* spriteList; // Used for organizing sprites
         Scene<AnimatedSprite*> * sceneData;
         sf::Vector3f startCorner; //Relative to scene. Scene renders at 0,0,0
         sf::Vector3f endCorner;
         sf::Vector3f mapPos;
         sf::Vector3i mSize;
+        int spacing;
 };
 
 #endif // MAP_H

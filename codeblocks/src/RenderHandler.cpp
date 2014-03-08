@@ -51,9 +51,9 @@ void RenderHandler::addRender(Map* m)
     animationQueue.push_back(m->getBackground()->getScene());
 
     // May change to pointers for less copying time
-    std::vector<AnimatedSprite*> sprs = m->getSpriteRender();
-    for(int x = 0; x < sprs.size(); x++){
-       animationQueue.push_back(sprs[x]);
+    std::vector<AnimatedSprite*>* sprs = m->getSpriteRender();
+    for(int x = 0; x < sprs->size(); x++){
+       animationQueue.push_back((*sprs)[x]);
     }
 
 }
