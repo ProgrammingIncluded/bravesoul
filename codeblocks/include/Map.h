@@ -19,7 +19,7 @@ class Map
         bool addGO(GameObject* go, sf::Vector2i vect); // For convenience...
         bool removeGO(GameObject& go);
 
-        bool setScene(std::string fileLoc);
+        bool setScene(sf::Texture& tex);
         bool moveGO(std::string name, sf::Vector3f);
 
         void setPlayPosition(sf::Vector3f startCorner, sf::Vector3f endCorner); //Sets grid positions.

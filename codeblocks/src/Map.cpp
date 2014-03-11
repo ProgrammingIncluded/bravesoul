@@ -84,16 +84,12 @@ void Map::setSpacing(int spc){
     spacing = spc;
 }
 
-bool Map::setScene(std::string fileLoc){
-    //Temporarly create scene MEMORy LEAK, I NOES
-    sf::Texture* texture = new sf::Texture();
-    if (!texture->loadFromFile("assets/general/logo.png"))
-    {
-        return false;
-    }
+bool Map::setScene(sf::Texture& tex){
+    // Should TDScene delete animation? Yes.
     Animation* main = new Animation();
-    main->setSpriteSheet(*texture);
-    main->addFrame(sf::IntRect(0,0,149,120));
+    main->setSpriteSheet(tex);
+    sf::Vector2u siz = tex.getSize();
+    main->addFrame(sf::IntRect(0,0,siz.x,siz.y));
     TDScene* tdScene = new TDScene();
     tdScene->setAnimation(main);
     sceneData = tdScene;

@@ -15,15 +15,10 @@ int main()
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
 
     window->setVerticalSyncEnabled(true);
+    RenderHandler* renderHandler = new RenderHandler(window);
 
     // load texture (spritesheet)
-    sf::Texture texture;
-    if (!texture.loadFromFile("assets/general/player.png"))
-    {
-        std::cout << "Failed to load player spritesheet!" << std::endl;
-        return 1;
-    }
-
+    sf::Texture texture = renderHandler->addTexture("assets/general/player.png");
     // set up the animations for all four directions (set spritesheet and push frames)
     Animation walkingAnimationDown;
     walkingAnimationDown.setSpriteSheet(texture);
@@ -53,19 +48,14 @@ int main()
     walkingAnimationUp.addFrame(sf::IntRect(32, 96, 32, 32));
     walkingAnimationUp.addFrame(sf::IntRect( 0, 96, 32, 32));
 
-    RenderHandler* renderHandler = new RenderHandler(window);
-
     Map* level = new Map(sf::Vector3i(500,500,2));
-    if(!level->setScene("Has temporary been disabled for parameter"))
-    {
-        return 1;
-    }
+    level->setScene(renderHandler->addTexture("assets/general/testmap.png"));
     level->setMapPosition(sf::Vector3f(100,100,0),sf::Vector3f(0,0,0));
 
     std::vector<Character*> arrayChar;
     //Try Gameobject class
-    for(int i = 0; i <= 100; i++){
-        for(int x = 0; x <= 100; x++){
+    for(int i = 0; i <= 1; i++){
+        for(int x = 0; x <= 0; x++){
             Character* steve = new Character();
             steve->setAnimation(walkingAnimationDown);
             arrayChar.push_back(steve);
@@ -79,6 +69,7 @@ int main()
     float speed = 80.f;
     bool noKeyWasPressed = true;
     bool isMapMov = false;
+    bool isMouseMov = false;
 
     // Test AudioHandler
     AudioHandler* auh = new AudioHandler();
@@ -91,8 +82,9 @@ int main()
     std::cout << "Press r to pause music." << std::endl;
     std::cout << "Press x to increase volume." << std::endl;
     std::cout << "Press z to decrease volume." << std::endl;
-
-
+    std::cout << "Press t to change render option." << std::endl;
+    std::cout << "Press l to lock/unlock mouse movement" << std::endl;
+    std::cout << "Mouse wheel to zoom in or out." << std::endl;
 
     while (window->isOpen())
     {
@@ -136,9 +128,24 @@ int main()
                     std::cout << "Now using physical Map movement." << std::endl;
                 }
             }
+
+            if(event->key.code == sf::Keyboard::L){
+                if(isMouseMov){
+                    isMouseMov = false;
+                    std::cout << "Mouse move disabled" << std::endl;
+                }
+                else {
+                    isMouseMov = true;
+                    std::cout << "Mouse move enabled." << std::endl;
+                }
+            }
         }
 
-        int movSpd = 5;
+        sf::View view = window->getView();
+        int movSpd = 2;
+        float zmSpd = 0.1;
+        int moveBar = 120;
+
         if(isMapMov){
              sf::Vector3f pos = level->getMapPos();
 
@@ -158,8 +165,6 @@ int main()
             level->setMapPosition(pos, sf::Vector3f(0,0,0));
         }
        else{
-            sf::View view = window->getView();
-
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 view.move(movSpd,0);
             }
@@ -172,10 +177,37 @@ int main()
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                 view.move(0,movSpd);
             }
-            window->setView(view);
+
         }
 
+        if(event->type == sf::Event::MouseWheelMoved ) {
+            if(event->mouseWheel.delta == -1){
+                view.zoom(zmSpd +1);
+            }
+            else if(event->mouseWheel.delta == 1){
+                view.zoom(1-zmSpd);
+            }
+        }
 
+        if(isMouseMov){
+            float x = sf::Mouse::getPosition(*window).x;
+            float y = sf::Mouse::getPosition(*window).y;
+            float sh = window->getSize().x;
+            float sw = window->getSize().y;
+            if(  sh-moveBar < x ) {
+                view.move(movSpd,0);
+            }
+            if(  x < moveBar) {
+                view.move(-movSpd,0);
+            }
+            if(  sw-moveBar < y ) {
+                view.move(0,movSpd);
+            }
+            if(  y < moveBar) {
+                view.move(0,-movSpd);
+            }
+        }
+        window->setView(view);
 
         renderHandler->addRender(level);
         renderHandler->update(frameTime);

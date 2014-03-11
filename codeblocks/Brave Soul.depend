@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1394240120 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
+1394522334 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 	<iostream>
@@ -293,11 +293,14 @@
 	"AnimatedSprite.h"
 	"Attack.h"
 
-1394235489 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/RenderHandler.cpp
+1394516989 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/RenderHandler.cpp
 	"RenderHandler.h"
 
-1393896631 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/RenderHandler.h
+1394516986 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/RenderHandler.h
 	<SFML/Graphics.hpp>
+	<memory>
+	<unordered_map>
+	<vector>
 	"AnimatedSprite.h"
 	"GameObject.h"
 	"Map.h"
@@ -448,14 +451,14 @@
 1392332686 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Weapon.h
 	"Offense.h"
 
-1393363950 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AudioHandler.h
+1394241829 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AudioHandler.h
 	<SFML/Audio.hpp>
 	<unordered_map>
 	<stdio.h>
 	<vector>
 	<memory>
 
-1393363988 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioHandler.cpp
+1394242931 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioHandler.cpp
 	"AudioHandler.h"
 
 1367997278 c:\sfml-2.1\include\sfml\audio\soundbuffer.hpp
@@ -546,11 +549,11 @@
 1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\weapon.h
 	"Offense.h"
 
-1394239997 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Map.cpp
+1394518880 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Map.cpp
 	"Map.h"
 	<iostream>
 
-1394236728 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Map.h
+1394518255 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Map.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<string>

@@ -38,6 +38,7 @@ class AudioHandler {
         float decVolume();
         float decVolume(float decInc);
         void clearBuffer();
+
     protected:
         std::vector<std::shared_ptr<sf::Sound>> s;
         std::unordered_map<std::string, std::shared_ptr<sf::SoundBuffer>> b;

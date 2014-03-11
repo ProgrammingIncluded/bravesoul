@@ -1,8 +1,11 @@
 #include "RenderHandler.h"
 
+typedef std::shared_ptr<sf::Texture> txPtr;
+
 RenderHandler::RenderHandler(sf::RenderWindow* r)
 {
     render = r;
+    texList.reserve(100);
 }
 
 RenderHandler::~RenderHandler()
@@ -56,4 +59,25 @@ void RenderHandler::addRender(Map* m)
        animationQueue.push_back((*sprs)[x]);
     }
 
+}
+
+sf::Texture& RenderHandler::addTexture(std::string file){
+   std::unordered_map<std::string, std::shared_ptr<sf::Texture>>::iterator it = texList.find(file);
+
+    if(it != texList.end()){
+        return *it->second;
+    }
+    else {
+        txPtr tex(new sf::Texture());
+        if(!tex->loadFromFile(file))
+        {
+            tex->loadFromFile("assets/general/player.png");
+        }
+        texList[file] = tex;
+        return *tex;
+    }
+}
+
+void RenderHandler::clearBuffer(){
+    texList.clear();
 }
