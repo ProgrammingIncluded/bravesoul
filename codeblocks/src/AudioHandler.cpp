@@ -56,7 +56,7 @@ float AudioHandler::decVolume() {
 
 float AudioHandler::decVolume(float newInc) {
     vInc = newInc;
-    decVolume()
+    decVolume();
 
     return this->v;
 }
@@ -74,21 +74,21 @@ float AudioHandler::getVolIncrements() {
 int AudioHandler::loadSound(string file) {
     unordered_map<string, shared_ptr<sf::SoundBuffer>>::iterator it = b.find(file);
 
-    if (it != b.end()) {
-        sdPtr newSnd(new sf::Sound(*it->second));
+    if (it != b.end()) { // != end() means it found something
+        std::shared_ptr<sf::Sound> newSnd = new sf::Sound(*it->second);
         s.push_back(newSnd);
     } else {
-        sbPtr sb(new sf::SoundBuffer());
+        std::shared_ptr<sf::SoundBuffer> sb = new sf::SoundBuffer();
 
-        if(!sb->loadFromFile(file)) {
-            return -1;
-        }
-
-        if(!(b[file] = sb)) { /// check to rehash
+        if(!sb->loadFromFile(file)) { // file check and loads the buffer
             return -1; /// placeholder for file exception
         }
 
-        sdPtr snd(new sf::Sound(*b[file]));
+        if(!(b[file] = sb)) { // hashes the new soundbuffer
+            return -1; /// check to rehash???
+        }
+
+        std::shared_ptr<sf::Sound> snd = new sf::Sound(*b[file]);
         s.push_back(snd);
     }
 

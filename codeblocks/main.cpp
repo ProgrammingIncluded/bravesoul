@@ -3,10 +3,12 @@
 #include <iostream>
 #include "AudioHandler.h"
 #include "AnimatedSprite.h"
+#include "GameState.h"
 
 
 int main()
 {
+    GameState gs = new GameState();
     // setup window
     sf::Vector2i screenDimensions(800,600);
     sf::RenderWindow window(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");

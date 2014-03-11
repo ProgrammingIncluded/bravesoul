@@ -527,7 +527,7 @@
 1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\offense.h
 	"GameObject.h"
 
-1393314530 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\audiohandler.cpp
+1393370311 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\audiohandler.cpp
 	"AudioHandler.h"
 
 1393024760 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\offense.cpp
@@ -538,4 +538,20 @@
 
 1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\weapon.h
 	"Offense.h"
+
+1394237330 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\gamestate.cpp
+	"GameState.h"
+
+1394237199 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\gamestate.h
+	<SFML/Audio.hpp>
+	<unordered_map>
+	<stdio.h>
+	<vector>
+	<memory>
+	<stack>
+	"State.h"
+
+1394237427 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\state.h
+	<SFML/Graphics.hpp>
+	<stdio.h>
 

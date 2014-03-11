@@ -1,0 +1,17 @@
+#include "State.h"
+
+State::State() {
+    //ctor
+}
+
+State::State(sf::Event *e) {
+    event = e;
+}
+
+State::~State() {
+    //dtor
+}
+
+State::setEvent(sf::Event e*) {
+    event = e;
+}

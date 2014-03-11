@@ -1,0 +1,17 @@
+#ifndef GAMESTATE_H
+#define GAMESTATE_H
+
+
+/// manages stack empty error, state errors
+class GameState
+{
+    public:
+        GameState();
+        virtual ~GameState();
+        void display(); // runs the first state on the stack
+        
+    private:
+        std::stack<*State> s;
+};
+
+#endif // GAMESTATE_H

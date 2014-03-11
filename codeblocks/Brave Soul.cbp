@@ -22,6 +22,7 @@
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
+					<Add library="sfml-audio" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -63,13 +64,17 @@
 		<Unit filename="include/Animation.h" />
 		<Unit filename="include/Attack.h" />
 		<Unit filename="include/AudioHandler.h" />
+		<Unit filename="include/AudioTestState.h" />
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/Damage.h" />
 		<Unit filename="include/Effect.h" />
 		<Unit filename="include/Frozen.h" />
 		<Unit filename="include/GameObject.h" />
+		<Unit filename="include/GameState.h" />
 		<Unit filename="include/Offense.h" />
 		<Unit filename="include/RenderHandler.h" />
+		<Unit filename="include/SpriteTestState.h" />
+		<Unit filename="include/State.h" />
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Abilities.cpp" />
@@ -77,13 +82,17 @@
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/Attack.cpp" />
 		<Unit filename="src/AudioHandler.cpp" />
+		<Unit filename="src/AudioTestState.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Damage.cpp" />
 		<Unit filename="src/Effect.cpp" />
 		<Unit filename="src/Frozen.cpp" />
 		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/GameState.cpp" />
 		<Unit filename="src/Offense.cpp" />
 		<Unit filename="src/RenderHandler.cpp" />
+		<Unit filename="src/SpriteTestState.cpp" />
+		<Unit filename="src/State.cpp" />
 		<Unit filename="src/Weapon.cpp" />
 		<Extensions>
 			<code_completion />
