@@ -4,6 +4,20 @@ using namespace std;
 typedef std::shared_ptr<sf::SoundBuffer> sbPtr;
 typedef std::shared_ptr<sf::Sound> sdPtr;
 
+
+AudioHandler& AudioHandler::getInstance() {
+    static AudioHandler ahInstance;
+    return ahInstance;
+}
+
+AudioHandler::AudioHandler(AudioHandler const&) {
+
+}
+
+void AudioHandler::operator=(AudioHandler const&){
+
+}
+
 AudioHandler::AudioHandler() {
     v = 30;
     vInc = 5;
@@ -13,6 +27,7 @@ AudioHandler::AudioHandler() {
 AudioHandler::~AudioHandler() {
     s.clear();
     b.clear();
+
 }
 
 AudioHandler* AudioHandler::setVolume(float v) {

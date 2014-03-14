@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1394522334 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
+1394830017 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 	<iostream>
@@ -7,6 +7,8 @@
 	"RenderHandler.h"
 	"AudioHandler.h"
 	"Map.h"
+	"AnimatedSprite.h"
+	"GameState.h"
 
 1390611944 ML/Graphics.hpp>
 
@@ -293,10 +295,10 @@
 	"AnimatedSprite.h"
 	"Attack.h"
 
-1394516989 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/RenderHandler.cpp
+1394826939 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/RenderHandler.cpp
 	"RenderHandler.h"
 
-1394516986 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/RenderHandler.h
+1394826932 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/RenderHandler.h
 	<SFML/Graphics.hpp>
 	<memory>
 	<unordered_map>
@@ -451,14 +453,14 @@
 1392332686 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/Weapon.h
 	"Offense.h"
 
-1394241829 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AudioHandler.h
+1394829907 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AudioHandler.h
 	<SFML/Audio.hpp>
 	<unordered_map>
 	<stdio.h>
 	<vector>
 	<memory>
 
-1394242931 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioHandler.cpp
+1394834852 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioHandler.cpp
 	"AudioHandler.h"
 
 1367997278 c:\sfml-2.1\include\sfml\audio\soundbuffer.hpp
@@ -537,7 +539,7 @@
 1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\offense.h
 	"GameObject.h"
 
-1393314530 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\audiohandler.cpp
+1393370311 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\audiohandler.cpp
 	"AudioHandler.h"
 
 1393024760 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\offense.cpp
@@ -548,6 +550,8 @@
 
 1393024760 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\weapon.h
 	"Offense.h"
+
+1393024760 D
 
 1394518880 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/Map.cpp
 	"Map.h"
@@ -579,4 +583,54 @@
 	"Scene.h"
 	"AnimatedSprite.h"
 	"Animation.h"
+
+1393910677 .h"
+
+1394237330 source:c:\users\tetranoir\documents\coding\bravesoul\codeblocks\src\gamestate.cpp
+	"GameState.h"
+
+1394237199 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\gamestate.h
+	<SFML/Audio.hpp>
+	<unordered_map>
+	<stdio.h>
+	<vector>
+	<memory>
+	<stack>
+	"State.h"
+
+1394237427 c:\users\tetranoir\documents\coding\bravesoul\codeblocks\include\state.h
+	<SFML/Graphics.hpp>
+	<stdio.h>
+
+1394237427 b9dabfdfbfefb6ecd53fc100597e392f10480
+
+1394587498 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/GameState.cpp
+	"GameState.h"
+
+1394836639 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/GameState.h
+	<SFML/Audio.hpp>
+	<unordered_map>
+	<stdio.h>
+	<vector>
+	<memory>
+	<stack>
+	"State.h"
+
+1394836626 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/State.h
+	"GameState.h"
+
+1394587498 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/State.cpp
+	"State.h"
+
+1394587847 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/AudioTestState.cpp
+	"AudioTestState.h"
+
+1394587835 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/AudioTestState.h
+	"State.h"
+	"AudioHandler.h"
+
+1394588046 source:/home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/src/SpriteTestState.cpp
+
+1394587967 /home/SuperKaitoKid/Documents/C++/Brave Soul/bravesoul/codeblocks/include/SpriteTestState.h
+	"State.h"
 

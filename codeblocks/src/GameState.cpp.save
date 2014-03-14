@@ -1,0 +1,20 @@
+#include "GameState.h"
+
+GameState::GameState() {
+    //ctor
+}
+
+GameState::~GameState() {
+    //dtor
+}
+
+GameState::display() {
+    State *cur;
+    State *next;
+    while(cur = s.top()) {
+        cur->run()
+        if(next = cur->run()) {
+            s.push(ne)
+        }
+    }
+}

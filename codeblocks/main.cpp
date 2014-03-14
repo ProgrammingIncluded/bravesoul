@@ -5,11 +5,13 @@
 #include "RenderHandler.h"
 #include "AudioHandler.h"
 #include "Map.h"
-
+#include "AnimatedSprite.h"
+#include "GameState.h"
 
 
 int main()
 {
+    GameState* gs = new GameState();
     // setup window
     sf::Vector2i screenDimensions(800, 600);
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
@@ -72,9 +74,10 @@ int main()
     bool isMouseMov = false;
 
     // Test AudioHandler
-    AudioHandler* auh = new AudioHandler();
+    AudioHandler* auh = &AudioHandler::getInstance();
     int s1 = auh->loadSound("assets/audio/Page Turn.wav");
     auh->playMusic("assets/audio/Yosuga No Sora OST 1.wav");
+
     //auh->playMusic("assets/audio/conquest.wav");
     std::cout << "AudioHandler index used: " << s1 << std::endl;
     std::cout << "Press q to turn a page." << std::endl;
@@ -218,14 +221,14 @@ int main()
     delete renderHandler;
     renderHandler = nullptr;
 
-    delete auh;
-    auh = nullptr;
-
     delete level;
     level = nullptr;
 
     delete window;
     window = nullptr;
+
+    delete gs;
+    gs = nullptr;
 
     for(int x =0; x< arrayChar.size(); x++){
         delete arrayChar[x];

@@ -12,8 +12,7 @@
 
 class AudioHandler {
     public:
-        AudioHandler();
-        ~AudioHandler();
+        static AudioHandler& getInstance();
 
         int loadSound(std::string filename);
         std::vector<int> loadSound(std::vector<std::string> filenames); // return list of indexes
@@ -45,6 +44,12 @@ class AudioHandler {
         float v;
         float vInc;
         sf::Music m;
+
+    private:
+        AudioHandler();
+        AudioHandler(AudioHandler const&);
+        void operator=(AudioHandler const&);
+        ~AudioHandler();
 };
 
 #endif // AUDIOHANDLER_H_INCLUDED

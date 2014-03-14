@@ -1,0 +1,10 @@
+#include "AudioTestState.h"
+
+AudioTestState::AudioTestState() : State() {
+    //ctor
+}
+
+AudioTestState::~AudioTestState()
+{
+    //dtor
+}

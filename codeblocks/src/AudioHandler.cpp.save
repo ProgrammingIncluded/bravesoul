@@ -11,7 +11,8 @@ AudioHandler::AudioHandler() {
 }
 
 AudioHandler::~AudioHandler() {
-    // missing destructors, will add
+    s.clear();
+    b.clear();
 }
 
 AudioHandler* AudioHandler::setVolume(float v) {
@@ -32,40 +33,62 @@ float AudioHandler::getVolume() {
 
 float AudioHandler::incVolume() {
     v += vInc;
+    if(v > 100)
+        v = 100;
+
     return this->v;
 }
 
 float AudioHandler::incVolume(float newInc) {
+    vInc = newInc;
+    incVolume();
+
     return this->v;
 }
 
 float AudioHandler::decVolume() {
+    v -= vInc;
+    if(v < 0)
+        v = 0;
+
     return this->v;
 }
 
 float AudioHandler::decVolume(float newInc) {
-    
+    vInc = newInc;
+    decVolume();
+
     return this->v;
+}
+
+AudioHandler* AudioHandler::setVolIncrements(float newInc) {
+    vInc = newInc;
+
+    return this;
+}
+
+float AudioHandler::getVolIncrements() {
+    return this->vInc;
 }
 
 int AudioHandler::loadSound(string file) {
     unordered_map<string, shared_ptr<sf::SoundBuffer>>::iterator it = b.find(file);
 
-    if (it != b.end()) {
-        sdPtr newSnd(new sf::Sound(*it->second));
+    if (it != b.end()) { // != end() means it found something
+        std::shared_ptr<sf::Sound> newSnd = new sf::Sound(*it->second);
         s.push_back(newSnd);
     } else {
-        sbPtr sb(new sf::SoundBuffer());
+        std::shared_ptr<sf::SoundBuffer> sb = new sf::SoundBuffer();
 
-        if(!sb->loadFromFile(file)) {
-            return -1;
-        }
-
-        if(!(b[file] = sb)) { /// check to rehash
+        if(!sb->loadFromFile(file)) { // file check
             return -1; /// placeholder for file exception
         }
 
-        sdPtr snd(new sf::Sound(*b[file]));
+        if(!(b[file] = sb)) { /// check to rehash
+            return -1; 
+        }
+
+        std::shared_ptr<sf::Sound> snd = new sf::Sound(*b[file]);
         s.push_back(snd);
     }
 
@@ -138,14 +161,6 @@ void AudioHandler::loadMusic(string file) {
 }
 
 void AudioHandler::clearBuffer() {
-    /*for (sf::Sound& si : s) { // dont know if i need this
-        delete si;
-    }
-    for (pair<string, sf::SoundBuffer>& mi : m) {
-        delete mi.second;
-        // shouldnt have to create new strings for the hash, 90% sure
-    }*/
     s.clear();
     b.clear();
-
 }
