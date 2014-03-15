@@ -13,8 +13,9 @@
 class RenderHandler
 {
 public:
-    RenderHandler(sf::RenderWindow* r);
-    ~RenderHandler();
+    static RenderHandler& getInstance();
+
+    sf::RenderWindow* getRenderWindow();
 
     void update(sf::Time frameTime);
     void addRender(sf::Sprite spr); // Todo, create sprite out of animation.
@@ -32,7 +33,15 @@ private:
 
     std::vector<sf::Sprite>spriteQueue;
     std::vector<AnimatedSprite*>animationQueue;
+
+    sf::Vector2i screenDimensions;
+
     sf::RenderWindow* render;
+
+    RenderHandler();
+    RenderHandler(RenderHandler const&);
+    void operator=(RenderHandler const&);
+    ~RenderHandler();
 };
 
 #endif // RENDERHANDLER_H

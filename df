@@ -1,0 +1,7 @@
+stash@{0}: WIP on framework: e13d6db Fixed memory leak. Added texture management in RenderHandler. Added mouse input in demo.
+stash@{1}: WIP on framework: e13d6db Fixed memory leak. Added texture management in RenderHandler. Added mouse input in demo.
+stash@{2}: WIP on framework: 22aed9c Fixed AudioHandler bugs. Replaced pointers with smart pointers. Added bool parameter for loop function. Added test application.
+stash@{3}: WIP on framework: 22aed9c Fixed AudioHandler bugs. Replaced pointers with smart pointers. Added bool parameter for loop function. Added test application.
+stash@{4}: WIP on framework: 5fa8f77 Added gamelogic uml and more gamelogic framework.
+stash@{5}: WIP on framework: 2431c7b Updated GameObject template.
+stash@{6}: gitg auto stash: master: b178ae1 Hopefully this will work.

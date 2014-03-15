@@ -2,15 +2,26 @@
 
 typedef std::shared_ptr<sf::Texture> txPtr;
 
-RenderHandler::RenderHandler(sf::RenderWindow* r)
+RenderHandler& RenderHandler::getInstance(){
+    static RenderHandler rhInstance;
+    return rhInstance;
+}
+
+RenderHandler::RenderHandler()
 {
-    render = r;
+    screenDimensions = sf::Vector2i(800,600);
+    render = new sf::RenderWindow(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
     texList.reserve(100);
 }
 
 RenderHandler::~RenderHandler()
 {
-    render = 0;
+    delete render;
+    render = nullptr;
+}
+
+sf::RenderWindow* RenderHandler::getRenderWindow(){
+    return render;
 }
 
 void RenderHandler::update(sf::Time frameTime)
