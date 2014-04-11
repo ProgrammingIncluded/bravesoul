@@ -5,6 +5,7 @@
 		<Option title="Brave Soul" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="BVSL/;BVSL/Logic/;BVSL/Logic/header/;BVSL/Core/;BVSL/Core/src/;BVSL/Core/header/;BVSL/Logic/src/;BVSL/States/;Scene/;Scene/header/;Scene/src/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Brave Soul" prefix_auto="1" extension_auto="1" />
@@ -60,45 +61,118 @@
 			<Add directory="C:/Users/Dennis/Documents/SFML-2.1/lib" />
 			<Add directory="C:/SFML-2.1/lib" />
 		</Linker>
-		<Unit filename="include/Abilities.h" />
-		<Unit filename="include/AnimatedSprite.h" />
-		<Unit filename="include/Animation.h" />
-		<Unit filename="include/Attack.h" />
-		<Unit filename="include/AudioHandler.h" />
-		<Unit filename="include/Character.h" />
-		<Unit filename="include/Damage.h" />
-		<Unit filename="include/Effect.h" />
-		<Unit filename="include/Frozen.h" />
-		<Unit filename="include/Game.h" />
-		<Unit filename="include/GameObject.h" />
-		<Unit filename="include/Map.h" />
-		<Unit filename="include/Offense.h" />
-		<Unit filename="include/RenderHandler.h" />
-		<Unit filename="include/Scene.h" />
-		<Unit filename="include/State.h" />
-		<Unit filename="include/TDScene.h" />
-		<Unit filename="include/TestLevel.h" />
-		<Unit filename="include/Weapon.h" />
+		<Unit filename="include/Abilities.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/AnimatedSprite.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Animation.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Attack.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/AudioHandler.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Character.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/Damage.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/Effect.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/Frozen.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/Game.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/GameObject.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Map.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Offense.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
+		<Unit filename="include/RenderHandler.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Scene.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/State.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/TDScene.h">
+			<Option virtualFolder="Scene/header/" />
+		</Unit>
+		<Unit filename="include/TestLevel.h">
+			<Option virtualFolder="Scene/header/" />
+		</Unit>
+		<Unit filename="include/Weapon.h">
+			<Option virtualFolder="BVSL/Logic/header/" />
+		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Abilities.cpp" />
-		<Unit filename="src/AnimatedSprite.cpp" />
-		<Unit filename="src/Animation.cpp" />
-		<Unit filename="src/Attack.cpp" />
-		<Unit filename="src/AudioHandler.cpp" />
-		<Unit filename="src/Character.cpp" />
-		<Unit filename="src/Damage.cpp" />
-		<Unit filename="src/Effect.cpp" />
-		<Unit filename="src/Frozen.cpp" />
-		<Unit filename="src/Game.cpp" />
-		<Unit filename="src/GameObject.cpp" />
-		<Unit filename="src/GameState.cpp" />
-		<Unit filename="src/Map.cpp" />
-		<Unit filename="src/Offense.cpp" />
-		<Unit filename="src/RenderHandler.cpp" />
-		<Unit filename="src/Scene.cpp" />
-		<Unit filename="src/TDScene.cpp" />
-		<Unit filename="src/TestLevel.cpp" />
-		<Unit filename="src/Weapon.cpp" />
+		<Unit filename="src/Abilities.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/AnimatedSprite.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Animation.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Attack.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/AudioHandler.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Character.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/Damage.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/Effect.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/Frozen.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/Game.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/GameObject.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Map.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Offense.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
+		<Unit filename="src/RenderHandler.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Scene.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/TDScene.cpp">
+			<Option virtualFolder="Scene/src/" />
+		</Unit>
+		<Unit filename="src/TestLevel.cpp">
+			<Option virtualFolder="Scene/src/" />
+		</Unit>
+		<Unit filename="src/Weapon.cpp">
+			<Option virtualFolder="BVSL/Logic/src/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -17,6 +17,8 @@ class Map
 
         bool addGO(GameObject* go, sf::Vector3i vect);
         bool addGO(GameObject* go, sf::Vector2i vect); // For convenience...
+        GameObject* getGO(sf::Vector3f vect);
+        GameObject* getGO(sf::Vector3i vect,  sf::Vector2f viewCoord);
         bool removeGO(GameObject& go);
 
         bool setScene(sf::Texture& tex);
@@ -36,11 +38,11 @@ class Map
         std::vector<std::vector<std::vector<GameObject*>>> mapList;
         std::vector<AnimatedSprite*>* spriteList; // Used for organizing sprites
         Scene<AnimatedSprite*> * sceneData;
-        sf::Vector3f startCorner; //Relative to scene. Scene renders at 0,0,0
+        sf::Vector3f startCorner; //Relative to scene. Scene renders at 0,0,0. Used for gameObject
         sf::Vector3f endCorner;
-        sf::Vector3f mapPos;
+        sf::Vector3f mapPos; // Used for background location
         sf::Vector3i mSize;
-        int spacing;
+        int spacing; // Spacing used for map
 };
 
 #endif // MAP_H

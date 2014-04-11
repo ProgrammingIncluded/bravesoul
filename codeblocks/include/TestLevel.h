@@ -35,7 +35,6 @@ class TestLevel : public State
         Map* level;
         std::vector<Character*> arrayChar;
 
-        sf::Event* event;
         sf::Time frameTime;
         sf::Clock frameClock;
 

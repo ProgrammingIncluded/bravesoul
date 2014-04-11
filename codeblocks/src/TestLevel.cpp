@@ -40,7 +40,7 @@ void TestLevel::Init(){
     level->setMapPosition(sf::Vector3f(100,100,0),sf::Vector3f(0,0,0));
 
     for(int i = 0; i <= 1; i++){
-        for(int x = 0; x <= 0; x++){
+        for(int x = 0; x <= 1; x++){
             Character* steve = new Character();
             steve->setAnimation(walkingAnimationDown);
             arrayChar.push_back(steve);
@@ -68,16 +68,16 @@ void TestLevel::Resume(){
 }
 
 void TestLevel::HandleEvents(Game* game){
-    event = new sf::Event();
+    sf::Event event = sf::Event();
 
     // Move to Game Class for Global?
-    while (window->pollEvent(*event))
+    while (window->pollEvent(event))
     {
-        if (event->type == sf::Event::Closed){
+        if (event.type == sf::Event::Closed){
             window->close();
             game->Quit();
         }
-        if (event->type == sf::Event::KeyPressed && event->key.code == sf::Keyboard::Escape)
+        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
         {
             window->close();
             game->Quit();
@@ -86,26 +86,26 @@ void TestLevel::HandleEvents(Game* game){
 
     frameTime = frameClock.restart();
 
-    if(event->type == sf::Event::KeyReleased) {
-        if(event->key.code == sf::Keyboard::Q) {
+    if(event.type == sf::Event::KeyReleased) {
+        if(event.key.code == sf::Keyboard::Q) {
             auh->playSound(backMusic);
         }
-        if(event->key.code == sf::Keyboard::E) {
+        if(event.key.code == sf::Keyboard::E) {
             auh->playMusic();
         }
-        if(event->key.code == sf::Keyboard::R) {
+        if(event.key.code == sf::Keyboard::R) {
             auh->pauseMusic();
         }
-        if(event->key.code == sf::Keyboard::X) {
+        if(event.key.code == sf::Keyboard::X) {
             auh->setVolume(auh->getVolume() + 5);
             std::cout << "\tVolume is " << auh->getVolume() << "\n";
         }
-        if(event->key.code == sf::Keyboard::Z) {
+        if(event.key.code == sf::Keyboard::Z) {
             auh->setVolume(auh->getVolume() - 5);
             std::cout << "\tVolume is " << auh->getVolume() << "\n";
         }
 
-        if(event->key.code == sf::Keyboard::T){
+        if(event.key.code == sf::Keyboard::T){
             if(isMapMov){
                 isMapMov = false;
                 std::cout << "Now using renderview movement." << std::endl;
@@ -116,7 +116,7 @@ void TestLevel::HandleEvents(Game* game){
             }
         }
 
-        if(event->key.code == sf::Keyboard::L){
+        if(event.key.code == sf::Keyboard::L){
             if(isMouseMov){
                 isMouseMov = false;
                 std::cout << "Mouse move disabled" << std::endl;
@@ -167,11 +167,11 @@ void TestLevel::HandleEvents(Game* game){
 
     }
 
-    if(event->type == sf::Event::MouseWheelMoved ) {
-        if(event->mouseWheel.delta == -1){
+    if(event.type == sf::Event::MouseWheelMoved ) {
+        if(event.mouseWheel.delta == -1){
             view.zoom(zmSpd +1);
         }
-        else if(event->mouseWheel.delta == 1){
+        else if(event.mouseWheel.delta == 1){
             view.zoom(1-zmSpd);
         }
     }
@@ -194,10 +194,15 @@ void TestLevel::HandleEvents(Game* game){
             view.move(0,-movSpd);
         }
     }
-    window->setView(view);
 
-    delete event;
-    event = nullptr;
+    if(event.type == sf::Event::MouseButtonReleased){
+        if(event.mouseButton.button == sf::Mouse::Left){
+            level->getGO(sf::Mouse::getPosition(*window), window->getDefaultView()->getCenter());
+            std::cout << sf::Mouse::getPosition(*window).x << ", " << sf::Mouse::getPosition(*window).y << std::endl;
+        }
+    }
+
+    window->setView(view);
 }
 
 void TestLevel::Update(Game* game){

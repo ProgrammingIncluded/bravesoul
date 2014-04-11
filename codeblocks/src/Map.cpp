@@ -38,24 +38,46 @@ Map::~Map()
 
 bool Map::addGO(GameObject* go, sf::Vector3i vect){
     mapList[vect.x][vect.y][vect.z] = go;
-    //go->setPosition(vect);
-    go->getAnimatedSprite()->setPosition(sf::Vector2f(startCorner.x+vect.x,startCorner.y+vect.y)); // Will need to add z buffer to sprite
+    sf::Vector2f pos;
+    pos.x = startCorner.x + vect.x*(spacing+1);
+    pos.y = startCorner.y + vect.y*(spacing+1);
+
+    go->getAnimatedSprite()->setPosition(pos); // Will need to add z buffer to sprite
     spriteList->push_back(go->getAnimatedSprite());
+
     return true;
 }
 
 bool Map::addGO(GameObject* go, sf::Vector2i vect){
-    mapList[vect.x][vect.y][0] = go; // Will need to fix for later. What happens if object is there. Need to do that.
-    //go->setPosition(vect);
-    go->getAnimatedSprite()->setPosition(sf::Vector2f(startCorner.x+vect.x+(vect.x*spacing),startCorner.y+vect.y+(vect.y*spacing))); // Change source to accept vector2f
-    spriteList->push_back(go->getAnimatedSprite());
-    return true;
+    sf::Vector3i newVect;
+    newVect.x = vect.x;
+    newVect.y = vect.y;
+    newVect.z = 0;
+    return addGO(go, newVect);
+}
+
+GameObject* Map::getGO(sf::Vector3f vect){
+    sf::Vector3f ve = sf::Vector3f();
+    ve.x = (int)vect.x;
+    ve.y = (int)vect.y;
+    ve.z = (int)vect.z;
+
+    return getGO(ve);
+}
+
+GameObject* Map::getGO(sf::Vector3i vect, sf::Vector2f viewCoord){
+   // mapList[][][]
+   // Transfer vect coordinates to game coordinants. Need it relative to center
+
+   if( startCorner.x >=vect.x && endCorner.x <= vect.x
+        && startCorner.y >= vect.y && endCorner.y <= vect.y ){
+        std::cout<< "Yay" << std::endl;
+   }
 }
 
 bool Map::removeGO(GameObject& go){
     return true; // Add iterators here to go through and find object?
 }
-
 
 void Map::setMapPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
     setPlayPosition(startCorner, endCorner);
