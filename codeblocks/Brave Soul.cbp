@@ -5,7 +5,7 @@
 		<Option title="Brave Soul" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="BVSL/;BVSL/Logic/;BVSL/Logic/header/;BVSL/Core/;BVSL/Core/src/;BVSL/Core/header/;BVSL/Logic/src/;BVSL/States/;Scene/;Scene/header/;Scene/src/;" />
+		<Option virtualFolders="BVSL\;BVSL\Logic\;BVSL\Logic\header\;BVSL\Core\;BVSL\Core\src\;BVSL\Core\header\;BVSL\Logic\src\;BVSL\States\;Scene\;Scene\header\;Scene\src\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Brave Soul" prefix_auto="1" extension_auto="1" />
@@ -51,15 +51,20 @@
 			<Add directory="include" />
 			<Add directory="C:/Users/Dennis/Documents/SFML-2.1/include" />
 			<Add directory="C:/SFML-2.1/include" />
+			<Add directory="C:/Users/Charles/Desktop/Saves/Programming/SFML Projects/lib/SFGUI-0.2.0 - Source/include" />
+			<Add directory="C:/Users/Charles/Desktop/Saves/Programming/SFML Projects/lib/SFML-2.1/include" />
 		</Compiler>
 		<Linker>
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
 			<Add library="sfml-audio" />
+			<Add library="libsfgui" />
 			<Add directory="lib" />
 			<Add directory="C:/Users/Dennis/Documents/SFML-2.1/lib" />
 			<Add directory="C:/SFML-2.1/lib" />
+			<Add directory="C:/Users/Charles/Desktop/Saves/Programming/SFML Projects/lib/SFGUI-0.2.0 - Source/lib" />
+			<Add directory="C:/Users/Charles/Desktop/Saves/Programming/SFML Projects/lib/SFML-2.1/lib" />
 		</Linker>
 		<Unit filename="include/Abilities.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
@@ -88,14 +93,17 @@
 		<Unit filename="include/Frozen.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
-		<Unit filename="include/Game.h">
-			<Option virtualFolder="BVSL/Core/header/" />
-		</Unit>
 		<Unit filename="include/GameObject.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
+		<Unit filename="include/Intro.h">
+			<Option virtualFolder="Scene/header/" />
+		</Unit>
 		<Unit filename="include/Map.h">
 			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/Menu.h">
+			<Option virtualFolder="Scene/header/" />
 		</Unit>
 		<Unit filename="include/Offense.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
@@ -107,6 +115,9 @@
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
 		<Unit filename="include/State.h">
+			<Option virtualFolder="BVSL/Core/header/" />
+		</Unit>
+		<Unit filename="include/StateManager.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
 		<Unit filename="include/TDScene.h">
@@ -146,14 +157,17 @@
 		<Unit filename="src/Frozen.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
-		<Unit filename="src/Game.cpp">
-			<Option virtualFolder="BVSL/Core/src/" />
-		</Unit>
 		<Unit filename="src/GameObject.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
+		<Unit filename="src/Intro.cpp">
+			<Option virtualFolder="Scene/src/" />
+		</Unit>
 		<Unit filename="src/Map.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/Menu.cpp">
+			<Option virtualFolder="Scene/src/" />
 		</Unit>
 		<Unit filename="src/Offense.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
@@ -162,6 +176,9 @@
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
 		<Unit filename="src/Scene.cpp">
+			<Option virtualFolder="BVSL/Core/src/" />
+		</Unit>
+		<Unit filename="src/StateManager.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
 		<Unit filename="src/TDScene.cpp">

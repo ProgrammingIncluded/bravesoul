@@ -6,7 +6,7 @@ TestLevel& TestLevel::getInstance(){
     return testState;
 }
 
-void TestLevel::Init(){
+void TestLevel::Init(StateManager* stateM){
     speed = 80.0f;
     noKeyWasPressed = true;
     isMapMov = false;
@@ -17,7 +17,7 @@ void TestLevel::Init(){
     window = ren->getRenderWindow();
 
     backMusic = auh->loadSound("assets/audio/Page Turn.wav");
-    auh->playMusic("assets/audio/Yosuga No Sora OST 1.wav");
+    auh->playMusic("assets/audio/conquest.ogg");
 
     std::cout << "AudioHandler index used: " << backMusic << std::endl;
     std::cout << "Press q to turn a page." << std::endl;
@@ -67,20 +67,20 @@ void TestLevel::Resume(){
 
 }
 
-void TestLevel::HandleEvents(Game* game){
+void TestLevel::HandleEvents(StateManager* StateManager){
     sf::Event event = sf::Event();
 
-    // Move to Game Class for Global?
+    // Move to StateManager Class for Global?
     while (window->pollEvent(event))
     {
         if (event.type == sf::Event::Closed){
             window->close();
-            game->Quit();
+            StateManager->Quit();
         }
         if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
         {
             window->close();
-            game->Quit();
+            StateManager->Quit();
         }
     }
 
@@ -197,7 +197,7 @@ void TestLevel::HandleEvents(Game* game){
 
     if(event.type == sf::Event::MouseButtonReleased){
         if(event.mouseButton.button == sf::Mouse::Left){
-            level->getGO(sf::Mouse::getPosition(*window), window->getDefaultView()->getCenter());
+            //level->getGO(sf::Mouse::getPosition(*window), window->getDefaultView()->getCenter());
             std::cout << sf::Mouse::getPosition(*window).x << ", " << sf::Mouse::getPosition(*window).y << std::endl;
         }
     }
@@ -205,11 +205,11 @@ void TestLevel::HandleEvents(Game* game){
     window->setView(view);
 }
 
-void TestLevel::Update(Game* game){
+void TestLevel::Update(StateManager* StateManager){
     //May put more info here.
 }
 
-void TestLevel::Draw(Game* game){
+void TestLevel::Draw(StateManager* StateManager){
     ren->addRender(level);
-    ren->update(frameTime);
+    ren->draw();
 }

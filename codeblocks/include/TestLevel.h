@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Game.h"
+#include "StateManager.h"
 #include "State.h"
 #include "Map.h"
 #include "RenderHandler.h"
@@ -13,14 +13,14 @@
 class TestLevel : public State
 {
     public:
-        void Init();
+        void Init(StateManager* stateM);
         void CleanUp();
         void Pause();
         void Resume();
 
-        void HandleEvents(Game* game);
-        void Update(Game* game);
-        void Draw(Game* game);
+        void HandleEvents(StateManager* game);
+        void Update(StateManager* game);
+        void Draw(StateManager* game);
 
         static TestLevel& getInstance();
 

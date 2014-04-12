@@ -6,16 +6,16 @@
 #include "AudioHandler.h"
 #include "Map.h"
 #include "AnimatedSprite.h"
-#include "Game.h"
-#include "TestLevel.h"
+#include "StateManager.h"
+#include "Intro.h"
 
 
 int main()
 {
-    Game game;
+    StateManager game;
 
     game.Init("Test", 800,600,false);
-    TestLevel* lvl = &TestLevel::getInstance();
+    Intro* lvl = Intro::getInstance();
     game.ChangeState(lvl);
 
     while(game.Running()){
