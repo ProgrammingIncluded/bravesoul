@@ -1,22 +1,12 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-enum enum_effect{
-    frozen,
-    heat,
-    poison,
-    rust,
-    confused
-};
-
 #include <map>
+#include "Character.h"
 #include "Effect.h"
 #include "Damage.h"
-#include "GameObject.h"
 
-class Effect; //Used since effect, attack, and GameObject have a loop include. Give errors... Codeblocks...
-class GameObject;
-
+class Character;
 
 /**
 * Attack class used to calculate effects and damage.
@@ -30,7 +20,7 @@ class Attack
 
         Attack();
 
-        void apply(GameObject* go);
+        void apply(Character* ch);
 
         void addDamage(Damage d);
         void subtrDamage(Damage d);

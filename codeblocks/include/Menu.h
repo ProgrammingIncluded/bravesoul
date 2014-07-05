@@ -6,6 +6,14 @@
 #include "RenderHandler.h"
 #include "AudioHandler.h"
 #include "TestLevel.h"
+#include "LogicTest.h"
+
+class State;
+class StateManager;
+class RenderHandler;
+class AudioHandler;
+class TestLevel;
+class LogicTest;
 
 class Menu : public State
 {
@@ -33,6 +41,8 @@ class Menu : public State
     private:
         RenderHandler* render;
         StateManager* stateM;
+
+        sf::Sprite backGround;
 
         //Sgui - Attributes here incase you ever need it.
 

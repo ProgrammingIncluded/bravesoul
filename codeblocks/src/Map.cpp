@@ -36,7 +36,7 @@ Map::~Map()
     spriteList = nullptr;
 }
 
-bool Map::addGO(GameObject* go, sf::Vector3i vect){
+bool Map::addGO(Character* go, sf::Vector3i vect){
     mapList[vect.x][vect.y][vect.z] = go;
     sf::Vector2f pos;
     pos.x = startCorner.x + vect.x*(spacing+1);
@@ -48,7 +48,7 @@ bool Map::addGO(GameObject* go, sf::Vector3i vect){
     return true;
 }
 
-bool Map::addGO(GameObject* go, sf::Vector2i vect){
+bool Map::addGO(Character* go, sf::Vector2i vect){
     sf::Vector3i newVect;
     newVect.x = vect.x;
     newVect.y = vect.y;
@@ -56,7 +56,7 @@ bool Map::addGO(GameObject* go, sf::Vector2i vect){
     return addGO(go, newVect);
 }
 
-GameObject* Map::getGO(sf::Vector3f vect){
+Character* Map::getGO(sf::Vector3f vect){
     sf::Vector3f ve = sf::Vector3f();
     ve.x = (int)vect.x;
     ve.y = (int)vect.y;
@@ -65,17 +65,18 @@ GameObject* Map::getGO(sf::Vector3f vect){
     return getGO(ve);
 }
 
-GameObject* Map::getGO(sf::Vector3i vect, sf::Vector2f viewCoord){
-   // mapList[][][]
-   // Transfer vect coordinates to game coordinants. Need it relative to center
-
-   if( startCorner.x >=vect.x && endCorner.x <= vect.x
-        && startCorner.y >= vect.y && endCorner.y <= vect.y ){
-        std::cout<< "Yay" << std::endl;
-   }
+Character* Map::getGO(sf::Vector3i vect){
+    // Check if given vector is within map range.
+    if(vect.x < 0 ||  vect.x > mSize.x ||
+       vect.y < 0 || vect.y > mSize.y ||
+       vect.z < 0 || vect.z > mSize.z)
+    {
+        return nullptr;
+    }
+    return mapList[vect.x][vect.y][vect.z];
 }
 
-bool Map::removeGO(GameObject& go){
+bool Map::removeGO(Character& go){
     return true; // Add iterators here to go through and find object?
 }
 

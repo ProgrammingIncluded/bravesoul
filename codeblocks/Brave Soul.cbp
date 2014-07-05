@@ -90,6 +90,8 @@
 		<Unit filename="include/Effect.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
+		<Unit filename="include/EffectEnum.h" />
+		<Unit filename="include/Field.h" />
 		<Unit filename="include/Frozen.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
@@ -97,6 +99,9 @@
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
 		<Unit filename="include/Intro.h">
+			<Option virtualFolder="Scene/header/" />
+		</Unit>
+		<Unit filename="include/LogicTest.h">
 			<Option virtualFolder="Scene/header/" />
 		</Unit>
 		<Unit filename="include/Map.h">
@@ -120,6 +125,7 @@
 		<Unit filename="include/StateManager.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
+		<Unit filename="include/Stats.h" />
 		<Unit filename="include/TDScene.h">
 			<Option virtualFolder="Scene/header/" />
 		</Unit>
@@ -154,6 +160,7 @@
 		<Unit filename="src/Effect.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
+		<Unit filename="src/Field.cpp" />
 		<Unit filename="src/Frozen.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
@@ -161,6 +168,9 @@
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
 		<Unit filename="src/Intro.cpp">
+			<Option virtualFolder="Scene/src/" />
+		</Unit>
+		<Unit filename="src/LogicTest.cpp">
 			<Option virtualFolder="Scene/src/" />
 		</Unit>
 		<Unit filename="src/Map.cpp">
@@ -181,6 +191,7 @@
 		<Unit filename="src/StateManager.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
+		<Unit filename="src/Stats.cpp" />
 		<Unit filename="src/TDScene.cpp">
 			<Option virtualFolder="Scene/src/" />
 		</Unit>

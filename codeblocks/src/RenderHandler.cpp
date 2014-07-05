@@ -34,11 +34,11 @@ sf::RenderWindow* RenderHandler::getRenderWindow(){
     return render;
 }
 
-void RenderHandler::draw()
+void RenderHandler::draw(const sf::Color &color)
 {
     sf::Time frameTime = clock.restart();
     desktop->Update(frameTime.asSeconds());
-    render->clear();
+    render->clear(color);
 
     for(int i = 0; i<spriteQueue.size(); i++)
     {
@@ -83,6 +83,10 @@ void RenderHandler::addRender(Map* m)
        animationQueue.push_back((*sprs)[x]);
     }
 
+}
+
+void RenderHandler::addRender(sfg::Widget::Ptr widget){
+    addWidget(widget);
 }
 
 sf::Texture& RenderHandler::addTexture(std::string file){

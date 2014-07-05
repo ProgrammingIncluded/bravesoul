@@ -6,8 +6,8 @@ Attack::Attack()
     //ctor
 }
 
-void Attack::apply(GameObject *go){
-    //tes
+void Attack::apply(Character *ch){
+
 }
 
 void Attack::addDamage(Damage d){

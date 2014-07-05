@@ -668,15 +668,17 @@
 	"StateManager.h"
 	"Intro.h"
 
-1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\character.h
+1402699699 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\character.h
 	"GameObject.h"
+	"Stats.h"
 
-1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\gameobject.h
+1402699959 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\gameobject.h
 	<SFML/Graphics.hpp>
 	<vector>
+	<iostream>
 	"AnimatedSprite.h"
 	"Animation.h"
-	"Attack.h"
+	"EffectEnum.h"
 
 1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\animatedsprite.h
 	<SFML/Graphics/RenderTarget.hpp>
@@ -691,18 +693,19 @@
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Texture.hpp>
 
-1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\attack.h
+1397867356 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\attack.h
 	<map>
+	"Character.h"
 	"Effect.h"
 	"Damage.h"
-	"GameObject.h"
 
-1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\effect.h
+1397867514 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\effect.h
+	"EffectEnum.h"
 	"GameObject.h"
 
 1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\damage.h
 
-1397257515 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
+1397853054 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
 	<SFML/Graphics.hpp>
 	<SFGUI/SFGUI.hpp>
 	<memory>
@@ -712,11 +715,11 @@
 	"GameObject.h"
 	"Map.h"
 
-1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\map.h
+1397864676 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\map.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<string>
-	"GameObject.h"
+	"Character.h"
 	"Scene.h"
 	"TDScene.h"
 	"AnimatedSprite.h"
@@ -744,7 +747,7 @@
 	<stdio.h>
 	<vector>
 
-1397258687 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\testlevel.h
+1397854845 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\testlevel.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"StateManager.h"
@@ -753,6 +756,7 @@
 	"RenderHandler.h"
 	"AudioHandler.h"
 	"Character.h"
+	"Attack.h"
 
 1397258691 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\state.h
 	"StateManager.h"
@@ -1166,7 +1170,7 @@
 	<SFML/System/Thread.hpp>
 	<vector>
 
-1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\attack.cpp
+1397867478 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\attack.cpp
 	"Attack.h"
 	"Frozen.h"
 
@@ -1176,7 +1180,7 @@
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\audiohandler.cpp
 	"AudioHandler.h"
 
-1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\character.cpp
+1402700514 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\character.cpp
 	"Character.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\damage.cpp
@@ -1192,17 +1196,17 @@
 	"Game.h"
 	"State.h"
 
-1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\gameobject.cpp
+1402700840 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\gameobject.cpp
 	"GameObject.h"
 
-1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\map.cpp
+1404524663 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\map.cpp
 	"Map.h"
 	<iostream>
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\offense.cpp
 	"Offense.h"
 
-1397261504 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
+1397853087 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
 	"RenderHandler.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\scene.cpp
@@ -1211,7 +1215,7 @@
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\tdscene.cpp
 	"TDScene.h"
 
-1397260057 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\testlevel.cpp
+1402697186 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\testlevel.cpp
 	"TestLevel.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\weapon.cpp
@@ -1572,7 +1576,7 @@
 	<stdio.h>
 	<vector>
 
-1397327934 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\intro.cpp
+1397864898 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\intro.cpp
 	"Intro.h"
 
 1397327065 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\intro.h
@@ -1582,17 +1586,48 @@
 	"AudioHandler.h"
 	"Menu.h"
 
-1397259925 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\menu.cpp
+1402697637 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\menu.cpp
 	"Menu.h"
 
-1397259627 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\menu.h
+1402697646 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\menu.h
 	"State.h"
 	"StateManager.h"
 	"RenderHandler.h"
 	"AudioHandler.h"
 	"TestLevel.h"
+	"LogicTest.h"
 
 1397258723 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\statemanager.cpp
 	"StateManager.h"
 	"State.h"
+
+1397865783 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\stats.h
+
+1397867462 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\effectenum.h
+
+1397866949 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\stats.cpp
+	"Stats.h"
+
+1404581170 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\logictest.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"StateManager.h"
+	"State.h"
+	"Map.h"
+	"RenderHandler.h"
+	"AudioHandler.h"
+	"Character.h"
+	"Field.h"
+	"Attack.h"
+
+1404581434 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\logictest.cpp
+	"LogicTest.h"
+
+1404581380 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\field.cpp
+	"Field.h"
+
+1404544218 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\field.h
+	"Attack.h"
+	"Character.h"
+	"Map.h"
 

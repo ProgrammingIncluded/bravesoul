@@ -3,9 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <iostream>
 #include "AnimatedSprite.h"
 #include "Animation.h"
-#include "Attack.h"
+#include "EffectEnum.h"
 
 class GameObject{
 
@@ -18,11 +19,17 @@ public:
 
     AnimatedSprite* getAnimatedSprite();
 
+    /*Mutators*/
+    bool setName(std::string name);
+
+    /*Accessors*/
+    std::string getName() const;
 
 private:
     // Should position be stored in GO as well?
     AnimatedSprite* spr;
     Animation anim;
+    std::string name;
     std::vector<enum_effect>effects;
     sf::Vector3f position;
 

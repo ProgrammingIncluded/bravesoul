@@ -47,6 +47,23 @@ void TestLevel::Init(StateManager* stateM){
             level->addGO(steve, sf::Vector2i(i,x));
         }
     }
+
+    // Set Up GUI
+    sfg::Button::Ptr attkButton = sfg::Button::Create("Attack!");
+    attkButton->GetSignal( sfg::Widget::OnLeftClick ).Connect( std::bind( &TestLevel::attackButton, this ) );
+    attkButton->SetId("Attack");
+
+    sfg::Box::Ptr box = sfg::Box::Create(sfg::Box::Orientation::VERTICAL, 5.0f);
+    box->SetId("statsBox");
+    box->SetSpacing(25.0f);
+    box->Pack(attkButton);
+
+    sfg::Window::Ptr  window = sfg::Window::Create();
+    window->SetTitle("Commands");
+    window->SetId("statsWindow");
+    window->Add(box);
+
+    ren->addRender(window);
 }
 
 void TestLevel::CleanUp(){
@@ -69,10 +86,12 @@ void TestLevel::Resume(){
 
 void TestLevel::HandleEvents(StateManager* StateManager){
     sf::Event event = sf::Event();
+    // Add Event Listener?
 
     // Move to StateManager Class for Global?
     while (window->pollEvent(event))
     {
+        ren->handleGUI(event);
         if (event.type == sf::Event::Closed){
             window->close();
             StateManager->Quit();
@@ -129,7 +148,7 @@ void TestLevel::HandleEvents(StateManager* StateManager){
     }
 
     sf::View view = window->getView();
-    int movSpd = 2;
+    int movSpd = 1+60*frameTime.asSeconds();
     float zmSpd = 0.1;
     int moveBar = 120;
 
@@ -212,4 +231,9 @@ void TestLevel::Update(StateManager* StateManager){
 void TestLevel::Draw(StateManager* StateManager){
     ren->addRender(level);
     ren->draw();
+}
+
+void TestLevel::attackButton(){
+    Character* go = level->getGO(sf::Vector3i(0,0,0));
+    Character* go2 = level->getGO(sf::Vector3i(1,0,0));
 }

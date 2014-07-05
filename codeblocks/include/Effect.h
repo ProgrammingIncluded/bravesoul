@@ -1,9 +1,8 @@
 #ifndef EFFECT_H
 #define EFFECT_H
 
+#include "EffectEnum.h"
 #include "GameObject.h"
-
-class GameObject;
 
 class Effect{
     public:

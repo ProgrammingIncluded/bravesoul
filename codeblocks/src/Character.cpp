@@ -1,10 +1,17 @@
 #include "Character.h"
 
-Character::Character(int h, int m, int s):
-maxhp(h), maxmp(m), maxstr(s)
+Character::Character(int mh, int mm, int ms)
 {
-    hp = maxhp;
-    mp = maxmp;
-    str = maxstr;
+    stat.setHp(mh);
+    stat.setMp(mm);
+    stat.setStr(ms);
+
     maxWeapon = 1;
+}
+
+std::ostream& operator<<(std::ostream& os, const Character& ca)
+{
+
+    os << ca.getName();
+    return os;
 }

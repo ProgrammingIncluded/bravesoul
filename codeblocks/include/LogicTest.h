@@ -1,5 +1,5 @@
-#ifndef TESTLEVEL_H
-#define TESTLEVEL_H
+#ifndef LOGICTEST_H
+#define LOGICTEST_H
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -9,9 +9,10 @@
 #include "RenderHandler.h"
 #include "AudioHandler.h"
 #include "Character.h"
+#include "Field.h"
 #include "Attack.h"
 
-class TestLevel : public State
+class LogicTest : public State
 {
     public:
         void Init(StateManager* stateM);
@@ -23,35 +24,30 @@ class TestLevel : public State
         void Update(StateManager* game);
         void Draw(StateManager* game);
 
-        static TestLevel& getInstance();
+        static LogicTest& getInstance();
 
     protected:
-        TestLevel(){}
-        TestLevel(TestLevel const&);
+        LogicTest(){}
+        LogicTest(LogicTest const&);
 
     private:
         RenderHandler* ren;
         AudioHandler* auh;
 
         Map* level;
+        Field* field;
         std::vector<Character*> arrayChar;
 
         sf::Time frameTime;
         sf::Clock frameClock;
 
-        float speed;
-        bool noKeyWasPressed;
-        bool isMapMov;
-        bool isMouseMov;
-        int backMusic; // Will not be final.
-
         Animation walkingAnimationDown;
 
         sf::RenderWindow* window;
 
-        void operator=(TestLevel const&);
+        void operator=(LogicTest const&);
 
         void attackButton();
 };
 
-#endif // TESTLEVEL_H
+#endif // LOGICTEST_H

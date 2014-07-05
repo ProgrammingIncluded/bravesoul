@@ -21,11 +21,12 @@ public:
 
     sf::RenderWindow* getRenderWindow();
 
-    void draw();
+    void draw(const sf::Color &color= sf::Color(0, 0, 0, 255));
     void addRender(sf::Sprite spr); // Todo, create sprite out of animation.
     void addRender(AnimatedSprite* spr);
     void addRender(GameObject* go);
     void addRender(Map* m);
+    void addRender(sfg::Widget::Ptr widget);
 
     sfg::Desktop* getGUIDesktop();
 

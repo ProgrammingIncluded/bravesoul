@@ -49,6 +49,12 @@ void Menu::Init(StateManager* stateM){
 
     render->addWidget(window);
 
+    backGround.setTexture(render->addTexture("assets/general/logo_dark.png"));
+    backGround.setScale(0.10f,0.10f);
+    sf::FloatRect sprRect = backGround.getLocalBounds();
+    backGround.setOrigin(sprRect.left + sprRect.width/2.0f, sprRect.top + sprRect.height/2.0f);
+    backGround.setPosition(sf::Vector2f(render->SCREEN_WIDTH/1.1,render->SCREEN_HEIGHT/1.1));
+
     // Added audio because why not..
 
 }
@@ -94,7 +100,7 @@ void Menu::HandleEvents(StateManager* stateM){
 }
 
 void Menu::Update(StateManager* stateM){
-
+    render->addRender(backGround);
 }
 
 void Menu::Draw(StateManager* stateM){
@@ -113,6 +119,6 @@ void Menu::clickStartGame(){
 
 void Menu::clickCustomGame(){
     stateM->PopState();
-    stateM->ChangeState(&TestLevel::getInstance());
+    stateM->ChangeState(&LogicTest::getInstance());
 }
 

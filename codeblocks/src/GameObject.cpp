@@ -5,6 +5,7 @@ GameObject::GameObject()
     sf::Vector3f defPos = sf::Vector3f(0,0,0);
     spr = new AnimatedSprite(sf::seconds(0.2), false, true);
     spr->setPosition(sf::Vector2f(defPos.x,defPos.y));
+    name = "null";
     position = defPos;
 }
 
@@ -25,6 +26,17 @@ void GameObject::setAnimation(Animation s){
 
 AnimatedSprite* GameObject::getAnimatedSprite(){
     return spr;
+}
+
+bool GameObject::setName(std::string name)
+{
+    this->name = name;
+    return true;
+}
+
+std::string GameObject::getName() const
+{
+    return name;
 }
 /*
 sf::Vector3f GameObject::getPosition(){
