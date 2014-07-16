@@ -1,6 +1,8 @@
 #ifndef EFFECT_H
 #define EFFECT_H
 
+class GameObject;
+
 #include "EffectEnum.h"
 #include "GameObject.h"
 

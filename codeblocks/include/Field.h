@@ -2,7 +2,9 @@
 #define FIELD_H
 
 #include "Attack.h"
+#include "AttackD.h"
 #include "Character.h"
+#include "Cursor.h"
 #include "Map.h"
 
 class Field
@@ -25,6 +27,7 @@ class Field
     private:
         // Decided to be passed via constructor.
         Map* level;
+
     protected:
 };
 

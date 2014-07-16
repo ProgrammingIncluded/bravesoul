@@ -1,16 +1,20 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-#include <map>
-#include "Character.h"
-#include "Effect.h"
-#include "Damage.h"
-
 class Character;
+class Effect;
+
+#include <map>
+#include "Damage.h"
+#include "EffectEnum.h"
 
 /**
 * Attack class used to calculate effects and damage.
 * GameObject use this class to send attack packets.
+* Why damage class instead of simple primitive? May be
+* used for modibility of what variable can be affected via
+* external script. As well as modibility. May change to primitive
+* if optimization.
 *
 */
 
@@ -20,7 +24,8 @@ class Attack
 
         Attack();
 
-        void apply(Character* ch);
+        // Perhaps un-needed for multi parameter character?
+        void apply(Character* attkr, Character* rec);
 
         void addDamage(Damage d);
         void subtrDamage(Damage d);
@@ -36,7 +41,7 @@ class Attack
         Damage dmg;
         std::map<enum_effect,int>effList;
 
-        Effect* enumToClass(enum_effect ef);
+        static Effect* enumToClass(enum_effect ef);
 };
 
 #endif // ATTACK_H

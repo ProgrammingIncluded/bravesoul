@@ -6,7 +6,8 @@ Attack::Attack()
     //ctor
 }
 
-void Attack::apply(Character *ch){
+void Attack::apply(Character* attkr, Character* rec){
+    // Add basic damage and add effects latter
 
 }
 

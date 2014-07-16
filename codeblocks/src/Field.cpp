@@ -2,6 +2,7 @@
 
 Field::Field(Map* lvl)
 {
+    AttackD::loadCAttacks();
     // Fix after addMap is implemented
     if(lvl == nullptr)
     {
@@ -13,6 +14,7 @@ Field::Field(Map* lvl)
 Field::~Field()
 {
     //dtor
+    AttackD::clearAttacks();
 }
 
 bool Field::addChar(Character* ch, sf::Vector3i loc)
@@ -27,12 +29,14 @@ bool Field::addChar(Character* ch, sf::Vector3i loc)
 
 bool Field::attack(sf::Vector3i atker, sf::Vector3i rec, Attack atk)
 {
-    if(level->getGO(atker) == nullptr || level->getGO(rec) == nullptr) //Add return nullptr in map and check here.
+    Character* attacker = level->getGO(atker);
+    Character* receiver = level->getGO(rec);
+    if(attacker == nullptr || receiver == nullptr) //Add return nullptr in map and check here.
     {
-        std::cout << "It works!1" << std::endl;
+        return false;
     }
-    else
-    {
-        std::cout << "It works!2" << std::endl;
-    }
+
+    Attack atck = AttackD::getAttack(0);
+    atck.apply(attacker,receiver);
+    return true;
 }

@@ -78,12 +78,14 @@
 		<Unit filename="include/Attack.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
+		<Unit filename="include/AttackD.h" />
 		<Unit filename="include/AudioHandler.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
 		<Unit filename="include/Character.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
+		<Unit filename="include/Cursor.h" />
 		<Unit filename="include/Damage.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
@@ -113,6 +115,7 @@
 		<Unit filename="include/Offense.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
+		<Unit filename="include/Punch.h" />
 		<Unit filename="include/RenderHandler.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
@@ -148,12 +151,14 @@
 		<Unit filename="src/Attack.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
+		<Unit filename="src/AttackD.cpp" />
 		<Unit filename="src/AudioHandler.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
 		<Unit filename="src/Character.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
+		<Unit filename="src/Cursor.cpp" />
 		<Unit filename="src/Damage.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
@@ -182,6 +187,7 @@
 		<Unit filename="src/Offense.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>
+		<Unit filename="src/Punch.cpp" />
 		<Unit filename="src/RenderHandler.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>

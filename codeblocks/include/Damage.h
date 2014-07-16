@@ -1,6 +1,8 @@
 #ifndef DAMAGE_H
 #define DAMAGE_H
 
+class Damage;
+
 //! Damage class for Damage Packet.
 /**
 * Damage class that is used in DamagePacket.
