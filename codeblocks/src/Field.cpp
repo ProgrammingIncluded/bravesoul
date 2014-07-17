@@ -38,5 +38,16 @@ bool Field::attack(sf::Vector3i atker, sf::Vector3i rec, Attack atk)
 
     Attack atck = AttackD::getAttack(0);
     atck.apply(attacker,receiver);
+
+    // Check if character is dead. Will replace with custom check function for more options.
+    if(attacker->getStats().getHp() <= 0)
+    {
+        level->removeGO(atker);
+    }
+    if(receiver->getStats().getHp() <= 0)
+    {
+        level->removeGO(rec);
+    }
+
     return true;
 }

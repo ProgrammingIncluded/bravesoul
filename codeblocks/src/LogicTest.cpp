@@ -126,5 +126,5 @@ void LogicTest::Draw(StateManager* StateManager){
 }
 
 void LogicTest::attackButton(){
-    field->attack(sf::Vector3i(0,0,0),sf::Vector3i(0,1,0), Attack());
+    field->attack(sf::Vector3i(0,0,0),sf::Vector3i(1,0,0), Attack());
 }

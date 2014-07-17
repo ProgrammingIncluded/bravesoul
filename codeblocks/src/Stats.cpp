@@ -48,3 +48,23 @@ bool Stats::setExp(int exp){
 
     return true;
 }
+
+int Stats::getHp()
+{
+    return hp;
+}
+
+int Stats::getMp()
+{
+    return mp;
+}
+
+int Stats::getExp()
+{
+    return exp;
+}
+
+int Stats::getStr()
+{
+    return str;
+}

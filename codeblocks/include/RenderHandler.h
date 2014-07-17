@@ -6,6 +6,7 @@
 #include <memory>
 #include <unordered_map>
 #include <vector>
+#include "Vector3iCompare.h"
 #include "AnimatedSprite.h"
 #include "GameObject.h"
 #include "Map.h"

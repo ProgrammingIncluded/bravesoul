@@ -11,6 +11,8 @@ class Character : public GameObject{
         Stats getStats();
         bool setStats(Stats stat);
 
+        // Used for updating effects, will need to move it to field or some manager with current design
+        // structure.
         void turnUpdate(){};
         void apply(std::vector<GameObject*> gos){};
         void apply(GameObject* go){};

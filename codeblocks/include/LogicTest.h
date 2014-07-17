@@ -36,6 +36,7 @@ class LogicTest : public State
 
         Map* level;
         Field* field;
+        // Field should be in charge of characters.
         std::vector<Character*> arrayChar;
 
         sf::Time frameTime;

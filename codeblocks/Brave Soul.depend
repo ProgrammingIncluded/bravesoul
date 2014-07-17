@@ -668,7 +668,7 @@
 	"StateManager.h"
 	"Intro.h"
 
-1405492643 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\character.h
+1405543467 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\character.h
 	"GameObject.h"
 	"Stats.h"
 
@@ -693,8 +693,10 @@
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Texture.hpp>
 
-1405496939 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\attack.h
+1405543629 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\attack.h
 	<map>
+	"Stats.h"
+	"Character.h"
 	"Damage.h"
 	"EffectEnum.h"
 
@@ -704,20 +706,23 @@
 
 1405496313 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\damage.h
 
-1404621453 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
+1405574575 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
 	<SFML/Graphics.hpp>
 	<SFGUI/SFGUI.hpp>
 	<memory>
 	<unordered_map>
 	<vector>
+	"Vector3iCompare.h"
 	"AnimatedSprite.h"
 	"GameObject.h"
 	"Map.h"
 
-1404621453 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\map.h
+1405574836 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\map.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<string>
+	<map>
+	"Vector3iCompare.h"
 	"Character.h"
 	"Scene.h"
 	"TDScene.h"
@@ -899,7 +904,7 @@
 
 1367997281 c:\users\charles\desktop\saves\programming\sfml projects\lib\sfml-2.1\include\sfml\system\vector2.inl
 
-1367997281 c:\users\charles\desktop\saves\programming\sfml projects\lib\sfml-2.1\include\sfml\system\vector3.hpp
+1405574338 c:\users\charles\desktop\saves\programming\sfml projects\lib\sfml-2.1\include\sfml\system\vector3.hpp
 	<SFML/System/Vector3.inl>
 
 1367997281 c:\users\charles\desktop\saves\programming\sfml projects\lib\sfml-2.1\include\sfml\system\vector3.inl
@@ -1169,7 +1174,7 @@
 	<SFML/System/Thread.hpp>
 	<vector>
 
-1404634394 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\attack.cpp
+1405544005 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\attack.cpp
 	"Attack.h"
 	"Frozen.h"
 
@@ -1179,7 +1184,7 @@
 1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\audiohandler.cpp
 	"AudioHandler.h"
 
-1405492717 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\character.cpp
+1405544156 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\character.cpp
 	"Character.h"
 
 1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\damage.cpp
@@ -1198,14 +1203,14 @@
 1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\gameobject.cpp
 	"GameObject.h"
 
-1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\map.cpp
+1405576179 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\map.cpp
 	"Map.h"
 	<iostream>
 
 1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\offense.cpp
 	"Offense.h"
 
-1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
+1405575211 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
 	"RenderHandler.h"
 
 1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\scene.cpp
@@ -1600,14 +1605,14 @@
 	"StateManager.h"
 	"State.h"
 
-1404621453 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\stats.h
+1405543892 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\stats.h
 
 1404621453 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\effectenum.h
 
-1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\stats.cpp
+1405543836 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\stats.cpp
 	"Stats.h"
 
-1404621453 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\logictest.h
+1405576687 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\logictest.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"StateManager.h"
@@ -1619,16 +1624,15 @@
 	"Field.h"
 	"Attack.h"
 
-1404621453 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\logictest.cpp
+1405544328 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\logictest.cpp
 	"LogicTest.h"
 
-1405498410 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\field.cpp
+1405544037 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\field.cpp
 	"Field.h"
 
-1405495834 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\field.h
+1405542798 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\field.h
 	"Attack.h"
 	"AttackD.h"
-	"Character.h"
 	"Cursor.h"
 	"Map.h"
 
@@ -1644,10 +1648,18 @@
 1405488043 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\cursor.cpp
 	"Cursor.h"
 
-1405498365 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\attackd.cpp
+1405498845 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\attackd.cpp
 	"AttackD.h"
 	"Punch.h"
 
-1405497640 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\punch.cpp
+1405544483 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\punch.cpp
 	"Punch.h"
+
+1405574920 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\vector3icompare.h
+	<SFML/Graphics.hpp>
+
+1374731181 c:\users\charles\desktop\saves\programming\sfml projects\lib\sfml-2.1\include\sfml\graphics
+
+1405575967 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\vector3icompare.cpp
+	"Vector3iCompare.h"
 

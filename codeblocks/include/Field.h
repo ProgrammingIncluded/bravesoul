@@ -1,9 +1,10 @@
 #ifndef FIELD_H
 #define FIELD_H
 
+class Character;
+
 #include "Attack.h"
 #include "AttackD.h"
-#include "Character.h"
 #include "Cursor.h"
 #include "Map.h"
 
@@ -21,6 +22,9 @@ class Field
         // Add to Map?
         bool attack(sf::Vector3i atkr, sf::Vector3i rec, Attack atk);
         bool addChar(Character* ch, sf::Vector3i loc);
+
+        // Custom function for custom checks on death or deletion of character. Will implement once attack system is working.
+        //bool isDead(Character*)
 
         // bool addMap(); Used for sudden map changes or map interaction?
 

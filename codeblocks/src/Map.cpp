@@ -5,7 +5,7 @@
 Map::Map(sf::Vector3i mSize)
 {
     // Size allocation is based on dimensions.
-    spriteList = new std::vector<AnimatedSprite*>();
+    spriteList = new std::map<sf::Vector3i,AnimatedSprite*,Vector3iCompare>();
     startCorner = sf::Vector3f(0,0,0);
     mapPos = startCorner;
     endCorner = sf::Vector3f(1,1,0);
@@ -28,12 +28,20 @@ Map::Map(sf::Vector3i mSize)
 
 Map::~Map()
 {
-    if(sceneData != nullptr){
+    if(sceneData != nullptr)
+    {
         delete sceneData;
     }
     sceneData = nullptr;
-    delete spriteList;
-    spriteList = nullptr;
+    // Will need to add clean up for alot of things.
+    if(spriteList != nullptr)
+    {
+        spriteList->clear();
+        delete spriteList;
+        spriteList = nullptr;
+    }
+
+    // Clean up of character's list? Or use smart pointers.
 }
 
 bool Map::addGO(Character* go, sf::Vector3i vect){
@@ -43,7 +51,7 @@ bool Map::addGO(Character* go, sf::Vector3i vect){
     pos.y = startCorner.y + vect.y*(spacing+1);
 
     go->getAnimatedSprite()->setPosition(pos); // Will need to add z buffer to sprite
-    spriteList->push_back(go->getAnimatedSprite());
+    (*spriteList)[vect] = go->getAnimatedSprite();
 
     return true;
 }
@@ -67,17 +75,35 @@ Character* Map::getGO(sf::Vector3f vect){
 
 Character* Map::getGO(sf::Vector3i vect){
     // Check if given vector is within map range.
-    if(vect.x < 0 ||  vect.x > mSize.x ||
-       vect.y < 0 || vect.y > mSize.y ||
-       vect.z < 0 || vect.z > mSize.z)
+    if(!inMap(vect))
     {
         return nullptr;
     }
     return mapList[vect.x][vect.y][vect.z];
 }
 
+//Impelement will via iteration.
+/*
 bool Map::removeGO(Character& go){
     return true; // Add iterators here to go through and find object?
+}
+*/
+
+bool Map::removeGO(sf::Vector3i pos)
+{
+    if(!inMap(pos))
+    {
+        return false;
+    }
+
+    // No deleting character as map is not in charge of it. CHANGE TO SHAREDPOINTER.
+    mapList[pos.x][pos.y][pos.z] = nullptr;
+
+    // Sprite deleted in GameObject. I know, will change to shared pointer asap.
+    (*spriteList)[pos] = nullptr;
+    spriteList->erase(pos);
+
+    return true;
 }
 
 void Map::setMapPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
@@ -87,11 +113,11 @@ void Map::setMapPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
 
 void Map::setPlayPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
     // Notice how the more GO, the longer it takes. Try not to move board position dynamically. Use in-game effects for effects.
-    for(int x=0; x < spriteList->size(); x++){
-        sf::Vector2f pos = (*spriteList)[x]->getPosition();
+    for(auto it = spriteList->begin(); it != spriteList->end(); ++it){
+        sf::Vector2f pos = it->second->getPosition();
         float locx = pos.x - this->startCorner.x;
         float locy = pos.y - this->startCorner.y;
-        (*spriteList)[x]->setPosition(sf::Vector2f(locx + startCorner.x, locy + startCorner.y));
+        it->second->setPosition(sf::Vector2f(locx + startCorner.x, locy + startCorner.y));
     }
 
     this->startCorner = startCorner;
@@ -120,7 +146,7 @@ bool Map::setScene(sf::Texture& tex){
 }
 
 
- std::vector<AnimatedSprite*>* Map::getSpriteRender(){
+ std::map<sf::Vector3i,AnimatedSprite*,Vector3iCompare>* Map::getSpriteRender(){
     return spriteList;
 }
 
@@ -130,4 +156,15 @@ Scene<AnimatedSprite*>* Map::getBackground(){
 
 sf::Vector3f Map::getMapPos(){
     return mapPos;
+}
+
+bool Map::inMap(sf::Vector3i vect)
+{
+    if(vect.x < 0 ||  vect.x > mSize.x ||
+       vect.y < 0 || vect.y > mSize.y ||
+       vect.z < 0 || vect.z > mSize.z)
+    {
+        return false;
+    }
+    return true;
 }

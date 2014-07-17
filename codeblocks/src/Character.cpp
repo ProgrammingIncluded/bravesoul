@@ -9,6 +9,17 @@ Character::Character(int mh, int mm, int ms)
     maxWeapon = 1;
 }
 
+Stats Character::getStats()
+{
+    return stat;
+}
+
+bool Character::setStats(Stats stat)
+{
+    this->stat = stat;
+    return true;
+}
+
 std::ostream& operator<<(std::ostream& os, const Character& ca)
 {
     os << ca.getName();
@@ -30,3 +41,4 @@ bool Character::setAttackList(std::vector<int>atkList)
     attackList = atkList;
     return true;
 }
+

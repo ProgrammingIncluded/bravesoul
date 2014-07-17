@@ -1,6 +1,7 @@
 #ifndef STATS_H
 #define STATS_H
 
+// For flexibilty, will change the class into a map for more modibility.
 
 class Stats
 {
@@ -16,6 +17,11 @@ class Stats
         bool setMp(int mp);
         bool setStr(int str);
         bool setExp(int exp);
+
+        int getHp();
+        int getMp();
+        int getStr();
+        int getExp();
 
     private:
         int hp;

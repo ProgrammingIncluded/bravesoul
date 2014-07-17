@@ -7,8 +7,13 @@ Attack::Attack()
 }
 
 void Attack::apply(Character* attkr, Character* rec){
-    // Add basic damage and add effects latter
-
+    // Add basic damage and add effects latter after testing new system.
+    // Currently only simple attacks in one apply. Will add more after system works.
+    Stats recStats = rec->getStats();
+    recStats.setHp(recStats.getHp() - dmg.hp);
+    recStats.setMp(recStats.getMp() - dmg.mp);
+    recStats.setStr(recStats.getStr() - dmg.stm);
+    rec->setStats(recStats);
 }
 
 void Attack::addDamage(Damage d){

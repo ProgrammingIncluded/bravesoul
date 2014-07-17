@@ -77,10 +77,10 @@ void RenderHandler::addRender(Map* m)
 {
     animationQueue.push_back(m->getBackground()->getScene());
 
-    // May change to pointers for less copying time
-    std::vector<AnimatedSprite*>* sprs = m->getSpriteRender();
-    for(int x = 0; x < sprs->size(); x++){
-       animationQueue.push_back((*sprs)[x]);
+    auto sprs = m->getSpriteRender();
+    for(auto it = sprs->begin(); it != sprs->end(); ++it)
+    {
+       animationQueue.push_back(it->second);
     }
 
 }
@@ -90,7 +90,7 @@ void RenderHandler::addRender(sfg::Widget::Ptr widget){
 }
 
 sf::Texture& RenderHandler::addTexture(std::string file){
-   std::unordered_map<std::string, std::shared_ptr<sf::Texture>>::iterator it = texList.find(file);
+    auto it = texList.find(file);
 
     if(it != texList.end()){
         return *it->second;

@@ -1,10 +1,11 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-class Character;
 class Effect;
 
 #include <map>
+#include "Stats.h"
+#include "Character.h"
 #include "Damage.h"
 #include "EffectEnum.h"
 
