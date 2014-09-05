@@ -1,6 +1,5 @@
 #include "LogicTest.h"
 
-
 LogicTest& LogicTest::getInstance(){
     static LogicTest testState;
     return testState;
@@ -24,7 +23,8 @@ void LogicTest::Init(StateManager* stateM){
 
     for(int i = 0; i <= 1; i++){
         for(int x = 0; x <= 1; x++){
-            Character* steve = new Character();
+            // Using smart pointers. charPtr is a typedef, check above.
+            Character::charPtr steve(new Character());
             steve->setName("Steve");
             steve->setAnimation(walkingAnimationDown);
             arrayChar.push_back(steve);
@@ -59,9 +59,7 @@ void LogicTest::CleanUp(){
     field = nullptr;
     delete level;
     level = nullptr;
-    for(int x =0; x< arrayChar.size(); x++){
-        delete arrayChar[x];
-    }
+    // No need to delete arrayChar, it is a smart pointer now :D
 }
 
 void LogicTest::Pause(){

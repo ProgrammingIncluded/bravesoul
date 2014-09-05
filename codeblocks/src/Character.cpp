@@ -42,3 +42,7 @@ bool Character::setAttackList(std::vector<int>atkList)
     return true;
 }
 
+Character::charPtr Character::createSharedPtr(int mh, int mm, int ms){
+    return std::shared_ptr<Character>(new Character(mh, mm, ms));
+}
+

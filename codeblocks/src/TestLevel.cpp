@@ -41,7 +41,7 @@ void TestLevel::Init(StateManager* stateM){
 
     for(int i = 0; i <= 1; i++){
         for(int x = 0; x <= 1; x++){
-            Character* steve = new Character();
+            Character::charPtr steve = Character::createSharedPtr();
             steve->setAnimation(walkingAnimationDown);
             arrayChar.push_back(steve);
             level->addGO(steve, sf::Vector2i(i,x));
@@ -71,9 +71,6 @@ void TestLevel::CleanUp(){
     auh = nullptr;
     delete level;
     level = nullptr;
-    for(int x =0; x< arrayChar.size(); x++){
-        delete arrayChar[x];
-    }
 }
 
 void TestLevel::Pause(){
@@ -234,6 +231,6 @@ void TestLevel::Draw(StateManager* StateManager){
 }
 
 void TestLevel::attackButton(){
-    Character* go = level->getGO(sf::Vector3i(0,0,0));
-    Character* go2 = level->getGO(sf::Vector3i(1,0,0));
+    Character::charPtr go = level->getGO(sf::Vector3i(0,0,0));
+    Character::charPtr go2 = level->getGO(sf::Vector3i(1,0,0));
 }

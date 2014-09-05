@@ -1,11 +1,16 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+#include <memory>
+
 #include "GameObject.h"
 #include "Stats.h"
 
 class Character : public GameObject{
     public:
+        //Type Defs`
+        typedef std::shared_ptr<Character> charPtr;
+
         Character(int mh = 100, int mm = 100, int ms = 100);
 
         Stats getStats();
@@ -19,6 +24,8 @@ class Character : public GameObject{
 
         bool setAttackList(std::vector<int>atkList);
         std::vector<int>getAttackList();
+
+        static Character::charPtr createSharedPtr(int mh = 100, int mm = 100, int ms = 100);
 
     private:
         Stats stat;

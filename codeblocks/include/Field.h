@@ -21,7 +21,7 @@ class Field
         // Perhaps implement names only for AI and search based queries.
         // Add to Map?
         bool attack(sf::Vector3i atkr, sf::Vector3i rec, Attack atk);
-        bool addChar(Character* ch, sf::Vector3i loc);
+        bool addChar(Character::charPtr ch, sf::Vector3i loc);
 
         // Custom function for custom checks on death or deletion of character. Will implement once attack system is working.
         //bool isDead(Character*)

@@ -6,7 +6,7 @@ Attack::Attack()
     //ctor
 }
 
-void Attack::apply(Character* attkr, Character* rec){
+void Attack::apply(Character::charPtr attkr, Character::charPtr rec){
     // Add basic damage and add effects latter after testing new system.
     // Currently only simple attacks in one apply. Will add more after system works.
     Stats recStats = rec->getStats();

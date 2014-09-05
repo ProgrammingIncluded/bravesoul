@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <memory>
 #include "StateManager.h"
 #include "State.h"
 #include "Map.h"
@@ -37,7 +38,7 @@ class LogicTest : public State
         Map* level;
         Field* field;
         // Field should be in charge of characters.
-        std::vector<Character*> arrayChar;
+        std::vector<Character::charPtr> arrayChar;
 
         sf::Time frameTime;
         sf::Clock frameClock;

@@ -17,10 +17,10 @@ class Map
         Map(sf::Vector3i mSize);
         virtual ~Map();
 
-        bool addGO(Character* go, sf::Vector3i vect);
-        bool addGO(Character* go, sf::Vector2i vect); // For convenience...
-        Character* getGO(sf::Vector3f vect);
-        Character* getGO(sf::Vector3i vect);
+        bool addGO(Character::charPtr go, sf::Vector3i vect);
+        bool addGO(Character::charPtr go, sf::Vector2i vect); // For convenience...
+        Character::charPtr getGO(sf::Vector3f vect);
+        Character::charPtr getGO(sf::Vector3i vect);
         // Will need to implement via iteration.
         //bool removeGO(Character& go);
         // Delete character based on position in map.
@@ -40,7 +40,7 @@ class Map
         //GLFloat get3DRender();
 
     private:
-        std::vector<std::vector<std::vector<Character*>>> mapList;
+        std::vector<std::vector<std::vector<Character::charPtr>>> mapList;
         // Old trade off between performance and memory. Using memory as large maps would be very hard to get animated sprites every loop.
         // Change to smart pointers?
         std::map<sf::Vector3i,AnimatedSprite*, Vector3iCompare>* spriteList; // Used for organizing sprites

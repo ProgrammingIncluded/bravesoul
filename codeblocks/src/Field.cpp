@@ -17,7 +17,7 @@ Field::~Field()
     AttackD::clearAttacks();
 }
 
-bool Field::addChar(Character* ch, sf::Vector3i loc)
+bool Field::addChar(Character::charPtr ch, sf::Vector3i loc)
 {
     if(ch == nullptr)
     {
@@ -29,8 +29,8 @@ bool Field::addChar(Character* ch, sf::Vector3i loc)
 
 bool Field::attack(sf::Vector3i atker, sf::Vector3i rec, Attack atk)
 {
-    Character* attacker = level->getGO(atker);
-    Character* receiver = level->getGO(rec);
+    Character::charPtr attacker = level->getGO(atker);
+    Character::charPtr receiver = level->getGO(rec);
     if(attacker == nullptr || receiver == nullptr) //Add return nullptr in map and check here.
     {
         return false;

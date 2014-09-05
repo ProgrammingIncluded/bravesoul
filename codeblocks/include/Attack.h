@@ -26,7 +26,7 @@ class Attack
         Attack();
 
         // Perhaps un-needed for multi parameter character?
-        void apply(Character* attkr, Character* rec);
+        void apply(Character::charPtr attkr, Character::charPtr rec);
 
         void addDamage(Damage d);
         void subtrDamage(Damage d);

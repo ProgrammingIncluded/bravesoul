@@ -34,7 +34,7 @@ class TestLevel : public State
         AudioHandler* auh;
 
         Map* level;
-        std::vector<Character*> arrayChar;
+        std::vector<Character::charPtr> arrayChar;
 
         sf::Time frameTime;
         sf::Clock frameClock;

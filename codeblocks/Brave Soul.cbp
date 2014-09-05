@@ -135,6 +135,7 @@
 		<Unit filename="include/TestLevel.h">
 			<Option virtualFolder="Scene/header/" />
 		</Unit>
+		<Unit filename="include/Vector3iCompare.h" />
 		<Unit filename="include/Weapon.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
@@ -204,6 +205,7 @@
 		<Unit filename="src/TestLevel.cpp">
 			<Option virtualFolder="Scene/src/" />
 		</Unit>
+		<Unit filename="src/Vector3iCompare.cpp" />
 		<Unit filename="src/Weapon.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
 		</Unit>

@@ -17,10 +17,11 @@ Map::Map(sf::Vector3i mSize)
 
     this->mSize = mSize;
     mapList.resize(mSize.x);
-    for(int i = 0; i < mSize.x; i++){
+    for(int i = 0; i < mSize.x; i++)
+    {
         mapList[i].resize(mSize.y);
-
-        for(int x=0; x < mSize.y; x++ ){
+        for(int x=0; x < mSize.y; x++ )
+        {
             mapList[i][x].resize(mSize.z);
         }
     }
@@ -44,7 +45,7 @@ Map::~Map()
     // Clean up of character's list? Or use smart pointers.
 }
 
-bool Map::addGO(Character* go, sf::Vector3i vect){
+bool Map::addGO(Character::charPtr go, sf::Vector3i vect){
     mapList[vect.x][vect.y][vect.z] = go;
     sf::Vector2f pos;
     pos.x = startCorner.x + vect.x*(spacing+1);
@@ -56,7 +57,7 @@ bool Map::addGO(Character* go, sf::Vector3i vect){
     return true;
 }
 
-bool Map::addGO(Character* go, sf::Vector2i vect){
+bool Map::addGO(Character::charPtr go, sf::Vector2i vect){
     sf::Vector3i newVect;
     newVect.x = vect.x;
     newVect.y = vect.y;
@@ -64,7 +65,7 @@ bool Map::addGO(Character* go, sf::Vector2i vect){
     return addGO(go, newVect);
 }
 
-Character* Map::getGO(sf::Vector3f vect){
+Character::charPtr Map::getGO(sf::Vector3f vect){
     sf::Vector3f ve = sf::Vector3f();
     ve.x = (int)vect.x;
     ve.y = (int)vect.y;
@@ -73,7 +74,7 @@ Character* Map::getGO(sf::Vector3f vect){
     return getGO(ve);
 }
 
-Character* Map::getGO(sf::Vector3i vect){
+Character::charPtr Map::getGO(sf::Vector3i vect){
     // Check if given vector is within map range.
     if(!inMap(vect))
     {
