@@ -12,6 +12,11 @@
 #include "Map.h"
 
 
+// Singleton class in charge of communicating with SFML rendering.
+// Acts a way for easier code portability and usage with SFML.
+// Under heavy changes as RenderHandler depends on what the current
+// program is and acts. Will require large change as of 9/7/2014
+
 class RenderHandler
 {
 public:
@@ -20,14 +25,16 @@ public:
     static const int SCREEN_WIDTH = 800;
     static const int SCREEN_HEIGHT = 600;
 
+    // Should not need to be used once everything is set in stone.
     sf::RenderWindow* getRenderWindow();
 
     void draw(const sf::Color &color= sf::Color(0, 0, 0, 255));
-    void addRender(sf::Sprite spr); // Todo, create sprite out of animation.
-    void addRender(AnimatedSprite* spr);
+    void addRender(sf::Drawable& drawable); // Todo, create sprite out of animation.
     void addRender(GameObject* go);
     void addRender(Map* m);
     void addRender(sfg::Widget::Ptr widget);
+    // Draw directly? Only func. that does not add to sec
+    void addRender(const std::vector<sf::Shape*>& shape);
 
     sfg::Desktop* getGUIDesktop();
 
@@ -45,8 +52,11 @@ public:
 private:
     std::unordered_map<std::string, std::shared_ptr<sf::Texture>>texList;
 
-    std::vector<sf::Sprite>spriteQueue;
-    std::vector<AnimatedSprite*>animationQueue;
+    // A second buffer may not be necessary. Double check code usage.
+    // Too much queues, this is unecessary. Also, as draw types increase
+    // vectors will also increase. Use SFML interface to communicate and
+    // change all Drawables in to openGL. Or use drawable :P.
+    std::vector<const sf::Drawable*>drawQueue;
 
     // May be depreacated
     sf::Vector2i screenDimensions;

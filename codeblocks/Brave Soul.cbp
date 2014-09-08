@@ -85,6 +85,7 @@
 		<Unit filename="include/Character.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
 		</Unit>
+		<Unit filename="include/ComplexShape.h" />
 		<Unit filename="include/Cursor.h" />
 		<Unit filename="include/Damage.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
@@ -100,6 +101,7 @@
 		<Unit filename="include/GameObject.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
+		<Unit filename="include/HollowBox.h" />
 		<Unit filename="include/Intro.h">
 			<Option virtualFolder="Scene/header/" />
 		</Unit>
@@ -122,6 +124,7 @@
 		<Unit filename="include/Scene.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
+		<Unit filename="include/Selector.h" />
 		<Unit filename="include/State.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
@@ -173,6 +176,7 @@
 		<Unit filename="src/GameObject.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
+		<Unit filename="src/HollowBox.cpp" />
 		<Unit filename="src/Intro.cpp">
 			<Option virtualFolder="Scene/src/" />
 		</Unit>
@@ -195,6 +199,7 @@
 		<Unit filename="src/Scene.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
+		<Unit filename="src/Selector.cpp" />
 		<Unit filename="src/StateManager.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>

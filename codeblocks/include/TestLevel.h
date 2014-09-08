@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+
 #include "StateManager.h"
 #include "State.h"
 #include "Map.h"
@@ -10,6 +11,7 @@
 #include "AudioHandler.h"
 #include "Character.h"
 #include "Attack.h"
+#include "HollowBox.h"
 
 class TestLevel : public State
 {
@@ -46,6 +48,7 @@ class TestLevel : public State
         int backMusic; // Will not be final.
 
         Animation walkingAnimationDown;
+        HollowBox* hollowBox;
 
         sf::RenderWindow* window;
 

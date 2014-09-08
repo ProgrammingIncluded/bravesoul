@@ -40,53 +40,50 @@ void RenderHandler::draw(const sf::Color &color)
     desktop->Update(frameTime.asSeconds());
     render->clear(color);
 
-    for(int i = 0; i<spriteQueue.size(); i++)
+    for(auto it = drawQueue.begin(); it != drawQueue.end(); ++it)
     {
-        render->draw(spriteQueue[i]);
-    }
-
-    for(int i = 0; i<animationQueue.size(); i++)
-    {
-        animationQueue[i]->update(frameTime);
-        render->draw(*animationQueue[i]);
+        render->draw(**it);
     }
 
     sfGui->Display(*render);
     render->display();
 
-    spriteQueue.clear();
-    animationQueue.clear();
+    drawQueue.clear();
 }
 
-void RenderHandler::addRender(sf::Sprite spr)
+void RenderHandler::addRender(sf::Drawable& drawable)
 {
-    spriteQueue.push_back(spr);
-}
-
-void RenderHandler::addRender(AnimatedSprite* spr)
-{
-    animationQueue.push_back(spr);
+    drawQueue.push_back(&drawable);
 }
 
 void RenderHandler::addRender(GameObject* go)
 {
-    animationQueue.push_back(go->getAnimatedSprite());
+    drawQueue.push_back(go->getAnimatedSprite());
 }
 
 void RenderHandler::addRender(Map* m)
 {
-    animationQueue.push_back(m->getBackground()->getScene());
+    drawQueue.push_back(m->getBackground()->getScene());
 
     auto sprs = m->getSpriteRender();
     for(auto it = sprs->begin(); it != sprs->end(); ++it)
     {
-       animationQueue.push_back(it->second);
+       drawQueue.push_back(it->second);
     }
 
 }
 
 void RenderHandler::addRender(sfg::Widget::Ptr widget){
     addWidget(widget);
+}
+
+// Draw directly?
+void RenderHandler::addRender(const std::vector<sf::Shape*>&shape)
+{
+    for(auto it = shape.begin(); it != shape.end(); ++it)
+    {
+        drawQueue.push_back(&**it);
+    }
 }
 
 sf::Texture& RenderHandler::addTexture(std::string file){

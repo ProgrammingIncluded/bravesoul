@@ -707,7 +707,7 @@
 
 1406329903 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\damage.h
 
-1406329903 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
+1410139502 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
 	<SFML/Graphics.hpp>
 	<SFGUI/SFGUI.hpp>
 	<memory>
@@ -752,7 +752,7 @@
 	<stdio.h>
 	<vector>
 
-1409878619 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\testlevel.h
+1409892921 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\testlevel.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"StateManager.h"
@@ -762,6 +762,7 @@
 	"AudioHandler.h"
 	"Character.h"
 	"Attack.h"
+	"HollowBox.h"
 
 1397258691 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\state.h
 	"StateManager.h"
@@ -1211,7 +1212,7 @@
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\offense.cpp
 	"Offense.h"
 
-1406329904 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
+1410139578 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
 	"RenderHandler.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\scene.cpp
@@ -1220,7 +1221,7 @@
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\tdscene.cpp
 	"TDScene.h"
 
-1409878644 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\testlevel.cpp
+1410143282 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\testlevel.cpp
 	"TestLevel.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\weapon.cpp
@@ -1664,4 +1665,20 @@
 
 1406329904 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\vector3icompare.cpp
 	"Vector3iCompare.h"
+
+1410142418 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\hollowbox.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<ComplexShape.h>
+
+1410143375 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\hollowbox.cpp
+	"HollowBox.h"
+
+1409886691 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\selector.cpp
+	"Selector.h"
+
+1409886623 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\selector.h
+	<SFML/Graphics.hpp>
+
+1410142499 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\complexshape.h
 

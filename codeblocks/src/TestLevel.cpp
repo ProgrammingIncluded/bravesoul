@@ -64,6 +64,7 @@ void TestLevel::Init(StateManager* stateM){
     window->Add(box);
 
     ren->addRender(window);
+    hollowBox = new HollowBox(sf::Vector2f(100,100));
 }
 
 void TestLevel::CleanUp(){
@@ -185,10 +186,12 @@ void TestLevel::HandleEvents(StateManager* StateManager){
 
     if(event.type == sf::Event::MouseWheelMoved ) {
         if(event.mouseWheel.delta == -1){
-            view.zoom(zmSpd +1);
+            //view.zoom(zmSpd +1);
+            hollowBox->setThickness(hollowBox->getThickness() - 1.0f);
         }
         else if(event.mouseWheel.delta == 1){
-            view.zoom(1-zmSpd);
+            //view.zoom(1-zmSpd);
+            hollowBox->setThickness(hollowBox->getThickness() + 1.0f);
         }
     }
 
@@ -214,7 +217,8 @@ void TestLevel::HandleEvents(StateManager* StateManager){
     if(event.type == sf::Event::MouseButtonReleased){
         if(event.mouseButton.button == sf::Mouse::Left){
             //level->getGO(sf::Mouse::getPosition(*window), window->getDefaultView()->getCenter());
-            std::cout << sf::Mouse::getPosition(*window).x << ", " << sf::Mouse::getPosition(*window).y << std::endl;
+            std::cout << sf::Mouse::getPosition(*window).x << ", "
+                << sf::Mouse::getPosition(*window).y << std::endl;
         }
     }
 
@@ -226,8 +230,9 @@ void TestLevel::Update(StateManager* StateManager){
 }
 
 void TestLevel::Draw(StateManager* StateManager){
-    ren->addRender(level);
+    //ren->addRender(level);
     ren->draw();
+    ren->addRender(hollowBox->getShape());
 }
 
 void TestLevel::attackButton(){
