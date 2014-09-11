@@ -41,11 +41,10 @@ Map::~Map()
         delete spriteList;
         spriteList = nullptr;
     }
-
-    // Clean up of character's list? Or use smart pointers.
 }
 
 bool Map::addGO(Character::charPtr go, sf::Vector3i vect){
+    // Add check if is in map.
     mapList[vect.x][vect.y][vect.z] = go;
     sf::Vector2f pos;
     pos.x = startCorner.x + vect.x*(spacing+1);
@@ -97,10 +96,8 @@ bool Map::removeGO(sf::Vector3i pos)
         return false;
     }
 
-    // No deleting character as map is not in charge of it. CHANGE TO SHAREDPOINTER.
     mapList[pos.x][pos.y][pos.z] = nullptr;
 
-    // Sprite deleted in GameObject. I know, will change to shared pointer asap.
     (*spriteList)[pos] = nullptr;
     spriteList->erase(pos);
 
@@ -113,7 +110,8 @@ void Map::setMapPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
 }
 
 void Map::setPlayPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
-    // Notice how the more GO, the longer it takes. Try not to move board position dynamically. Use in-game effects for effects.
+    // Notice how the more GO, the longer it takes. Try not to move board
+    // position dynamically. Use in-game effects for effects.
     for(auto it = spriteList->begin(); it != spriteList->end(); ++it){
         sf::Vector2f pos = it->second->getPosition();
         float locx = pos.x - this->startCorner.x;
@@ -126,7 +124,8 @@ void Map::setPlayPosition(sf::Vector3f startCorner, sf::Vector3f endCorner){
 }
 
 void Map::setRenderPosition(sf::Vector3f pos){
-    sceneData->getScene()->setPosition(sf::Vector2f(pos.x,pos.y)); //Will need to add z buffer sprite
+    //Will need to add z buffer sprite if want to have 3d...
+    sceneData->getScene()->setPosition(sf::Vector2f(pos.x,pos.y));
     mapPos = pos;
 }
 
@@ -146,6 +145,15 @@ bool Map::setScene(sf::Texture& tex){
     return true;
 }
 
+sf::Vector2f Map::mapToGlobalPos(sf::Vector2f vect)
+{
+    sf::Vector2f value;
+    // Better to calculate it than iterator map to find sprite
+    // as that would make it dependent on GO amount.
+    value.x = startCorner.x + vect.x*(spacing+1);
+    value.y = startCorner.y + vect.y*(spacing+1);
+    return value;
+}
 
  std::map<sf::Vector3i,AnimatedSprite*,Vector3iCompare>* Map::getSpriteRender(){
     return spriteList;

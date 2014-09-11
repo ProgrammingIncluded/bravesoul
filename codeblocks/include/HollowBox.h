@@ -21,6 +21,8 @@ class HollowBox : public ComplexShape
         // Remove once implement drawable.
         const std::vector<sf::Shape*>& getShape();
         void update();
+        void setPosition(sf::Vector2f vect);
+        sf::Vector2f getPosition();
 
         // Getters and Setters
         bool setThickness(float thick);

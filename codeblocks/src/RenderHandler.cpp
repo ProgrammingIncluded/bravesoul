@@ -40,6 +40,12 @@ void RenderHandler::draw(const sf::Color &color)
     desktop->Update(frameTime.asSeconds());
     render->clear(color);
 
+    for(auto it = animQueue.begin(); it != animQueue.end(); ++it)
+    {
+        (*it)->update(frameTime);
+        render->draw(**it);
+    }
+
     for(auto it = drawQueue.begin(); it != drawQueue.end(); ++it)
     {
         render->draw(**it);
@@ -49,6 +55,7 @@ void RenderHandler::draw(const sf::Color &color)
     render->display();
 
     drawQueue.clear();
+    animQueue.clear();
 }
 
 void RenderHandler::addRender(sf::Drawable& drawable)
@@ -58,17 +65,18 @@ void RenderHandler::addRender(sf::Drawable& drawable)
 
 void RenderHandler::addRender(GameObject* go)
 {
-    drawQueue.push_back(go->getAnimatedSprite());
+    animQueue.push_back(go->getAnimatedSprite());
 }
 
 void RenderHandler::addRender(Map* m)
 {
-    drawQueue.push_back(m->getBackground()->getScene());
+    animQueue.push_back(m->getBackground()->getScene());
 
+    // Returns an animation sprite
     auto sprs = m->getSpriteRender();
     for(auto it = sprs->begin(); it != sprs->end(); ++it)
     {
-       drawQueue.push_back(it->second);
+       animQueue.push_back(it->second);
     }
 
 }

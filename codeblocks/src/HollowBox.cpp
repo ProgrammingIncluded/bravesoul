@@ -70,6 +70,19 @@ void HollowBox::update()
     rht->setPoint(3, sf::Vector2f(-hSize.x + thickness, -hSize.y + thickness)); // Top right
 }
 
+void HollowBox::setPosition(sf::Vector2f vect)
+{
+    (*polygon)[0] -> setPosition(vect);
+    (*polygon)[1] -> setPosition(vect);
+    (*polygon)[2] -> setPosition(vect);
+    (*polygon)[3] -> setPosition(vect);
+}
+
+sf::Vector2f HollowBox::getPosition()
+{
+    return (*polygon)[0]->getPosition();
+}
+
 // Getters and Setters
 bool HollowBox::setThickness(float thick)
 {

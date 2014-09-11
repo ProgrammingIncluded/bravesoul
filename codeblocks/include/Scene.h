@@ -21,7 +21,7 @@ template<typename data> class Scene
         Scene(data d);
         virtual ~Scene();
 
-        data getScene();
+        data& getScene();
         bool setScene(data d);
 
         bool setFileTileProp(std::string prop);

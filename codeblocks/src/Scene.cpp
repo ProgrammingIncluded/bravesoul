@@ -13,7 +13,7 @@ Scene<data> ::~Scene()
 }
 
 template<typename data>
-data Scene<data> ::getScene()
+data& Scene<data> ::getScene()
 {
     return d;
 }

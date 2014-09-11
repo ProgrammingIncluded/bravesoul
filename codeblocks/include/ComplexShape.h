@@ -19,6 +19,11 @@ class ComplexShape
         // is modified.
         // Should it be private?
         virtual void update() = 0;
+
+        // Note that the position may differ on each shape as
+        //  each complex shape might have unique positions...
+        virtual void setPosition(sf::Vector2f vect) = 0;
+        virtual sf::Vector2f getPosition() = 0;
 };
 
 #endif // COMPLEXSHAPE_H

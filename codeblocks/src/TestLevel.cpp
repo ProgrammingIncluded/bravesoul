@@ -64,7 +64,8 @@ void TestLevel::Init(StateManager* stateM){
     window->Add(box);
 
     ren->addRender(window);
-    hollowBox = new HollowBox(sf::Vector2f(100,100));
+    hollowBox = new HollowBox(sf::Vector2f(25,25));
+    hollowBox->setThickness(5.0f);
 }
 
 void TestLevel::CleanUp(){
@@ -185,16 +186,16 @@ void TestLevel::HandleEvents(StateManager* StateManager){
     }
 
     if(event.type == sf::Event::MouseWheelMoved ) {
+        sf::Vector2f pos = hollowBox->getPosition();
         if(event.mouseWheel.delta == -1){
-            //view.zoom(zmSpd +1);
-            hollowBox->setThickness(hollowBox->getThickness() - 1.0f);
+            view.zoom(zmSpd +1);
         }
         else if(event.mouseWheel.delta == 1){
-            //view.zoom(1-zmSpd);
-            hollowBox->setThickness(hollowBox->getThickness() + 1.0f);
+            view.zoom(1-zmSpd);
         }
     }
 
+    // Test code for moving mouse.
     if(isMouseMov){
         float x = sf::Mouse::getPosition(*window).x;
         float y = sf::Mouse::getPosition(*window).y;
@@ -217,11 +218,14 @@ void TestLevel::HandleEvents(StateManager* StateManager){
     if(event.type == sf::Event::MouseButtonReleased){
         if(event.mouseButton.button == sf::Mouse::Left){
             //level->getGO(sf::Mouse::getPosition(*window), window->getDefaultView()->getCenter());
-            std::cout << sf::Mouse::getPosition(*window).x << ", "
-                << sf::Mouse::getPosition(*window).y << std::endl;
+            /*std::cout << sf::Mouse::getPosition(*window).x << ", "
+                << sf::Mouse::getPosition(*window).y << std::endl;*/
+            hollowBox->setPosition(level->mapToGlobalPos(sf::Vector2f(0,0)));
+        }
+        if(event.mouseButton.button == sf::Mouse::Right){
+            hollowBox->setPosition(level->mapToGlobalPos(sf::Vector2f(1,0)));
         }
     }
-
     window->setView(view);
 }
 
@@ -230,9 +234,9 @@ void TestLevel::Update(StateManager* StateManager){
 }
 
 void TestLevel::Draw(StateManager* StateManager){
-    //ren->addRender(level);
-    ren->draw();
+    ren->addRender(level);
     ren->addRender(hollowBox->getShape());
+    ren->draw();
 }
 
 void TestLevel::attackButton(){

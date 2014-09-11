@@ -5,7 +5,7 @@
 		<Option title="Brave Soul" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="BVSL\;BVSL\Logic\;BVSL\Logic\header\;BVSL\Core\;BVSL\Core\src\;BVSL\Core\header\;BVSL\Logic\src\;BVSL\States\;Scene\;Scene\header\;Scene\src\;" />
+		<Option virtualFolders="BVSL\;BVSL\Logic\;BVSL\Logic\header\;BVSL\Core\;BVSL\Core\src\;BVSL\Core\header\;BVSL\Logic\src\;BVSL\States\;Scene\;Scene\header\;Scene\src\;BVSL\States\src\;BVSL\States\header\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Brave Soul" prefix_auto="1" extension_auto="1" />
@@ -103,16 +103,16 @@
 		</Unit>
 		<Unit filename="include/HollowBox.h" />
 		<Unit filename="include/Intro.h">
-			<Option virtualFolder="Scene/header/" />
+			<Option virtualFolder="BVSL/States/header/" />
 		</Unit>
 		<Unit filename="include/LogicTest.h">
-			<Option virtualFolder="Scene/header/" />
+			<Option virtualFolder="BVSL/States/header/" />
 		</Unit>
 		<Unit filename="include/Map.h">
 			<Option virtualFolder="BVSL/Core/header/" />
 		</Unit>
 		<Unit filename="include/Menu.h">
-			<Option virtualFolder="Scene/header/" />
+			<Option virtualFolder="BVSL/States/header/" />
 		</Unit>
 		<Unit filename="include/Offense.h">
 			<Option virtualFolder="BVSL/Logic/header/" />
@@ -136,7 +136,7 @@
 			<Option virtualFolder="Scene/header/" />
 		</Unit>
 		<Unit filename="include/TestLevel.h">
-			<Option virtualFolder="Scene/header/" />
+			<Option virtualFolder="BVSL/States/header/" />
 		</Unit>
 		<Unit filename="include/Vector3iCompare.h" />
 		<Unit filename="include/Weapon.h">
@@ -178,16 +178,16 @@
 		</Unit>
 		<Unit filename="src/HollowBox.cpp" />
 		<Unit filename="src/Intro.cpp">
-			<Option virtualFolder="Scene/src/" />
+			<Option virtualFolder="BVSL/States/src/" />
 		</Unit>
 		<Unit filename="src/LogicTest.cpp">
-			<Option virtualFolder="Scene/src/" />
+			<Option virtualFolder="BVSL/States/src/" />
 		</Unit>
 		<Unit filename="src/Map.cpp">
 			<Option virtualFolder="BVSL/Core/src/" />
 		</Unit>
 		<Unit filename="src/Menu.cpp">
-			<Option virtualFolder="Scene/src/" />
+			<Option virtualFolder="BVSL/States/src/" />
 		</Unit>
 		<Unit filename="src/Offense.cpp">
 			<Option virtualFolder="BVSL/Logic/src/" />
@@ -208,7 +208,7 @@
 			<Option virtualFolder="Scene/src/" />
 		</Unit>
 		<Unit filename="src/TestLevel.cpp">
-			<Option virtualFolder="Scene/src/" />
+			<Option virtualFolder="BVSL/States/src/" />
 		</Unit>
 		<Unit filename="src/Vector3iCompare.cpp" />
 		<Unit filename="src/Weapon.cpp">

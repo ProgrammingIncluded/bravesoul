@@ -22,6 +22,9 @@ Animation GameObject::getAnimation(){
 void GameObject::setAnimation(Animation s){
     anim = s;
     spr->setAnimation(anim);
+    const sf::IntRect &rect =
+        spr->getAnimation()->getFrame(0);
+    spr->setOrigin(sf::Vector2f(rect.width/2, rect.height/2));
 }
 
 AnimatedSprite* GameObject::getAnimatedSprite(){

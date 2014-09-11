@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="src\TestLevel.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7617" topLine="208" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="259" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Field.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="726" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="src\AnimatedSprite.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1523" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="include\EffectEnum.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="161" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Animation.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1532" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="include\Attack.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="616" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="src\Attack.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="145" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\AttackD.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="443" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="include\AttackD.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="691" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\AudioHandler.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1601" topLine="79" />
+		</Cursor>
+	</File>
+	<File name="include\Animation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1476" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="src\Character.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="557" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="include\Damage.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="371" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Effect.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Damage.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="23" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\GameObject.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="412" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="include\Character.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="809" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="include\HollowBox.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="550" topLine="11" />
+			<Cursor1 position="619" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="include\ComplexShape.h" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="942" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\Field.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -21,29 +116,24 @@
 			<Cursor1 position="928" topLine="24" />
 		</Cursor>
 	</File>
-	<File name="src\GameObject.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\AnimatedSprite.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="104" topLine="0" />
+			<Cursor1 position="1539" topLine="30" />
 		</Cursor>
 	</File>
-	<File name="src\StateManager.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\GameObject.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="105" topLine="0" />
+			<Cursor1 position="600" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Map.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Map.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="849" topLine="10" />
+			<Cursor1 position="1634" topLine="37" />
 		</Cursor>
 	</File>
-	<File name="src\HollowBox.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+	<File name="src\HollowBox.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2445" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Stats.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="660" topLine="17" />
+			<Cursor1 position="2457" topLine="75" />
 		</Cursor>
 	</File>
 	<File name="include\Menu.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -51,14 +141,14 @@
 			<Cursor1 position="182" topLine="15" />
 		</Cursor>
 	</File>
+	<File name="include\AudioHandler.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1449" topLine="12" />
+		</Cursor>
+	</File>
 	<File name="src\Intro.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1554" topLine="32" />
-		</Cursor>
-	</File>
-	<File name="src\TDScene.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="125" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\LogicTest.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
@@ -66,24 +156,19 @@
 			<Cursor1 position="2036" topLine="46" />
 		</Cursor>
 	</File>
-	<File name="src\TestLevel.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6070" topLine="201" />
-		</Cursor>
-	</File>
 	<File name="include\Punch.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="56" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Map.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="src\Map.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1025" topLine="40" />
+			<Cursor1 position="4170" topLine="128" />
 		</Cursor>
 	</File>
-	<File name="include\RenderHandler.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\RenderHandler.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1925" topLine="15" />
+			<Cursor1 position="836" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="src\Menu.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
@@ -91,9 +176,9 @@
 			<Cursor1 position="3975" topLine="87" />
 		</Cursor>
 	</File>
-	<File name="include\Scene.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Scene.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="245" topLine="10" />
+			<Cursor1 position="346" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="src\Offense.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -111,9 +196,9 @@
 			<Cursor1 position="177" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\RenderHandler.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="src\RenderHandler.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2387" topLine="95" />
+			<Cursor1 position="1379" topLine="34" />
 		</Cursor>
 	</File>
 	<File name="include\StateManager.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -123,7 +208,7 @@
 	</File>
 	<File name="src\Scene.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="152" topLine="6" />
+			<Cursor1 position="218" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="include\Stats.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -136,109 +221,29 @@
 			<Cursor1 position="251" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\ComplexShape.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\StateManager.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="672" topLine="0" />
+			<Cursor1 position="105" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Field.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\TestLevel.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="726" topLine="7" />
+			<Cursor1 position="40" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\TestLevel.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Stats.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1127" topLine="0" />
+			<Cursor1 position="660" topLine="17" />
 		</Cursor>
 	</File>
-	<File name="include\Attack.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\TDScene.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="616" topLine="7" />
+			<Cursor1 position="125" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\Weapon.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="116" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\AttackD.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="691" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="259" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Animation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1206" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="include\Effect.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="16" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\AnimatedSprite.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1078" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="include\EffectEnum.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="161" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Character.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="809" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Attack.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="145" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\AttackD.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="443" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="include\Damage.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="371" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\AudioHandler.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1601" topLine="79" />
-		</Cursor>
-	</File>
-	<File name="include\AnimatedSprite.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1142" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="src\Character.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="557" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\GameObject.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="412" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="include\AudioHandler.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1449" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="src\Damage.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="23" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -57,6 +57,7 @@ private:
     // vectors will also increase. Use SFML interface to communicate and
     // change all Drawables in to openGL. Or use drawable :P.
     std::vector<const sf::Drawable*>drawQueue;
+    std::vector<AnimatedSprite*>animQueue;
 
     // May be depreacated
     sf::Vector2i screenDimensions;

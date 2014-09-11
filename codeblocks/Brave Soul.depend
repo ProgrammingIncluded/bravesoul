@@ -707,7 +707,7 @@
 
 1406329903 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\damage.h
 
-1410139502 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
+1410229215 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\renderhandler.h
 	<SFML/Graphics.hpp>
 	<SFGUI/SFGUI.hpp>
 	<memory>
@@ -718,7 +718,7 @@
 	"GameObject.h"
 	"Map.h"
 
-1409875097 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\map.h
+1410228395 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\map.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<string>
@@ -729,7 +729,7 @@
 	"TDScene.h"
 	"AnimatedSprite.h"
 
-1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\scene.h
+1410228849 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\scene.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<string>
@@ -776,7 +776,7 @@
 1397256493 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\offense.h
 	"GameObject.h"
 
-1397256493 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\animatedsprite.cpp
+1410409105 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\animatedsprite.cpp
 	"AnimatedSprite.h"
 
 1397256493 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\animation.cpp
@@ -1202,26 +1202,26 @@
 	"Game.h"
 	"State.h"
 
-1402700840 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\gameobject.cpp
+1410409614 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\gameobject.cpp
 	"GameObject.h"
 
-1409875106 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\map.cpp
+1410228651 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\map.cpp
 	"Map.h"
 	<iostream>
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\offense.cpp
 	"Offense.h"
 
-1410139578 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
+1410229260 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\renderhandler.cpp
 	"RenderHandler.h"
 
-1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\scene.cpp
+1410228860 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\scene.cpp
 	"Scene.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\tdscene.cpp
 	"TDScene.h"
 
-1410143282 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\testlevel.cpp
+1410229923 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\testlevel.cpp
 	"TestLevel.h"
 
 1397256494 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\weapon.cpp
@@ -1666,12 +1666,12 @@
 1406329904 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\vector3icompare.cpp
 	"Vector3iCompare.h"
 
-1410142418 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\hollowbox.h
+1410148274 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\hollowbox.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<ComplexShape.h>
 
-1410143375 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\hollowbox.cpp
+1410148245 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\hollowbox.cpp
 	"HollowBox.h"
 
 1409886691 source:c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\src\selector.cpp
@@ -1680,5 +1680,5 @@
 1409886623 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\selector.h
 	<SFML/Graphics.hpp>
 
-1410142499 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\complexshape.h
+1410148287 c:\users\charles\desktop\saves\programming\sfml projects\bravesoul\codeblocks\include\complexshape.h
 
